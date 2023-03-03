@@ -9,7 +9,9 @@ const {
   GraphQLID,
   GraphQLString,
   GraphQLSchema,
-  GraphQLList
+  GraphQLList,
+  GraphQLNonNull,
+  GraphQLEnumType
 } = require("graphql");
 
 // Pizza Type
@@ -40,6 +42,7 @@ const BusinessPartnersType = new GraphQLObjectType({
   })
 });
 
+// Queries
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -72,6 +75,68 @@ const RootQuery = new GraphQLObjectType({
   }
 });
 
+// Mutations
+const mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    // Add a Business Partner
+    addBusinessPartner: {
+      type: BusinessPartnersType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        email: { type: GraphQLNonNull(GraphQLString) },
+        phone: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const businessPartner = new BusinessPartner({
+          name: args.name,
+          email: args.email,
+          phone: args.phone
+        });
+        return businessPartner.save();
+      }
+    },
+    // Delete a Business Partner
+    deleteBusinessPartner: {
+      type: BusinessPartnersType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        return BusinessPartner.findByIdAndDelete(args.id);
+      }
+    },
+    // Add a Pizza
+    addPizza: {
+      type: PizzaType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        status: {
+          type: new GraphQLEnumType({
+            name: "PizzaStatus",
+            values: {
+              available: { value: "available" },
+              notAvailable: { value: "not available" }
+            }
+          }),
+          defaultValue: "available"
+        },
+        businessPartnerId: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        const pizza = new Pizza({
+          name: args.name,
+          description: args.description,
+          status: args.status,
+          businessPartnerId: args.businessPartnerId
+        });
+      }
+    }
+  }
+});
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation
 });
