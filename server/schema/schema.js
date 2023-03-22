@@ -50,8 +50,11 @@ const BusinessPartnersType = new GraphQLObjectType({
     phone: { type: GraphQLString }
   })
 });
+// defining what properties a BusinessPartner object can have as it is passed from
+// the MongoDB server to the React front end and the other way around
 
 // Queries
+// these are the GraphQL queries used for Pizza objects
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -61,6 +64,8 @@ const RootQuery = new GraphQLObjectType({
         return Pizza.find();
       }
     },
+    // returns all of the Pizza objects
+    // since all of the Pizza object are being returned, no args are necessary
     pizza: {
       type: PizzaType,
       args: { id: { type: GraphQLID } },
@@ -68,6 +73,8 @@ const RootQuery = new GraphQLObjectType({
         return Pizza.findById(args.id);
       }
     },
+    // returns a single instance of a Pizza object
+    // the Pizza object will be returned based on the id that is given as the argument
     businessPartners: {
       type: new GraphQLList(BusinessPartnersType),
       resolve(parent, args) {
