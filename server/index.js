@@ -11,9 +11,13 @@ const cors = require("cors");
 require("dotenv").config();
 // allows to call on .env file so we don't have to share delicate information
 const { graphqlHTTP } = require("express-graphql");
+// function that is used to enable use of schema, used in app.use() function
 const schema = require("./schema/schema");
+// importing schema file so we can use it in our application
 const connectDB = require("./config/db");
+// connects MongoDB server
 const port = process.env.PORT || 3019;
+// let's app know what localhost port to use
 
 const app = express();
 // Using Express.js
