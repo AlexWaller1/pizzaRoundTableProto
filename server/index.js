@@ -25,5 +25,6 @@ app.use(
     graphiql: process.env.NODE_ENV === "development"
   })
 );
+// setting up our app to use GraphQL as long NODE_ENV from .env is equal to "development"
 
 app.listen(port, console.log(`Server running on port ${port}`));
