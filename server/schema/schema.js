@@ -103,7 +103,12 @@ const mutation = new GraphQLObjectType({
         id: { type: GraphQLNonNull(GraphQLID) }
       },
       resolve(parent, args) {
-        return BusinessPartner.findByIdAndDelete(args.id);
+        Pizza.find({ businessPartnerId: args.id }).then(pizzas => {
+          pizzas.forEach(pizza => {
+            Pizza.findByIdAndRemove(pizza.id);
+          });
+        });
+        return BusinessPartner.findByIdAndRemove(args.id);
       }
     },
     // Add a Pizza
@@ -131,6 +136,49 @@ const mutation = new GraphQLObjectType({
           status: args.status,
           businessPartnerId: args.businessPartnerId
         });
+        return pizza.save();
+      }
+    },
+    // Delete a Pizza
+    deletePizza: {
+      type: PizzaType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        return Pizza.findByIdAndRemove(args.id);
+      }
+    },
+    // Update a Pizza
+    updatePizza: {
+      type: PizzaType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLString },
+        description: { type: GraphQLString },
+        status: {
+          type: new GraphQLEnumType({
+            name: "PizzaStatusUpdate",
+            values: {
+              available: { value: "available" },
+              notAvailable: { value: "not available" }
+            }
+          })
+        }
+      },
+      resolve(parent, args) {
+        return Pizza.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              description: args.description,
+              status: args.status
+            }
+          },
+          { new: true }
+          // if Pizza is not found in DB, then new Pizza will be created
+        );
       }
     }
   }
