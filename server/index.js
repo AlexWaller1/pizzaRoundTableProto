@@ -2,9 +2,14 @@
 
 // Top of the Application for the Server end of the Application
 const express = require("express");
+// to use Express.js
 const colors = require("colors");
+// just connectDB() function can log important message to console in color with
+// bold and underlined font
 const cors = require("cors");
+// allows localhost port to access api data
 require("dotenv").config();
+// allows to call on .env file so we don't have to share delicate information
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema");
 const connectDB = require("./config/db");
