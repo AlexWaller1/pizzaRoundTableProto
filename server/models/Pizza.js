@@ -18,6 +18,7 @@ const PizzaSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "BusinessPartner"
   }
+  // todo: make sure to add an img property which has a data type of string
 });
 
 module.exports = mongoose.model("Pizza", PizzaSchema);

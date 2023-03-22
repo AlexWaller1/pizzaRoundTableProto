@@ -1,9 +1,13 @@
+// schema.js is the file where the GraphQL queries and mutations are
+
 const { pizzas, businessPartners } = require("../sampleData.js");
 
 // Mongoose Models
 const Pizza = require("../models/Pizza");
 const BusinessPartner = require("../models/BusinessPartner");
+// models are imported here so they can be called for queries and mutations
 
+// GraphQL data types that will be used to define data types for properties
 const {
   GraphQLObjectType,
   GraphQLID,
