@@ -1,3 +1,5 @@
+// Sample Data that was used before MongoDB server was set up
+
 // Pizzas
 const pizzas = [
   {
