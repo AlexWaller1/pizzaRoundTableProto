@@ -119,15 +119,21 @@ const mutation = new GraphQLObjectType({
           email: args.email,
           phone: args.phone
         });
+        // creating new instance of the BusinessPartner model with required
+        // and posted data
         return businessPartner.save();
+        // will save new instance to MongoDB server and return the new instance
       }
     },
     // Delete a Business Partner
     deleteBusinessPartner: {
       type: BusinessPartnersType,
+      // BusinessPartnerObjects must abide by the BusinessPartnersType properties
       args: {
         id: { type: GraphQLNonNull(GraphQLID) }
       },
+      // we must include the id as an argument so MongoDB knows which
+      // businessPartner object to delete
       resolve(parent, args) {
         Pizza.find({ businessPartnerId: args.id }).then(pizzas => {
           pizzas.forEach(pizza => {
@@ -136,6 +142,8 @@ const mutation = new GraphQLObjectType({
         });
         return BusinessPartner.findByIdAndRemove(args.id);
       }
+      // todo: we don't need to worry about deleting the Pizza when a business partner
+      // is deleted
     },
     // Add a Pizza
     addPizza: {
@@ -153,7 +161,10 @@ const mutation = new GraphQLObjectType({
           }),
           defaultValue: "available"
         },
+        // this is how an enum is set up, we have to say what the values are,
+        // as well as what we want the default value to be in the dropdown menu
         businessPartnerId: { type: GraphQLNonNull(GraphQLID) }
+        // todo: don't need this
       },
       resolve(parent, args) {
         const pizza = new Pizza({
@@ -164,6 +175,9 @@ const mutation = new GraphQLObjectType({
         });
         return pizza.save();
       }
+      // same deal as businessPartner, create a new Pizza object, with and assign the
+      // posted data to the new object's values
+      // then we save to MongoDB and return new object
     },
     // Delete a Pizza
     deletePizza: {
