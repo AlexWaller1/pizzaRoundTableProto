@@ -80,6 +80,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return BusinessPartner.find();
       }
+      // returns all businessPartners, so now argument needed
     },
     businessPartner: {
       type: BusinessPartnersType,
@@ -87,10 +88,13 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         return BusinessPartner.findById(args.id);
       }
+      // returns a single instance of a BusinessPartner based on the argument
+      // of the id going into the query
     }
   }
 });
 
+// for posting, updating, and deleting data
 // Mutations
 const mutation = new GraphQLObjectType({
   name: "Mutation",
