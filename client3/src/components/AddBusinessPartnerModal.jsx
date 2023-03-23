@@ -73,6 +73,7 @@ export default function AddBusinessPartnerModal() {
                             <label className="form-label">Name</label>
                             <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
                         </div>
+                        { /* mb stands for margin-bottom, this is a bootstrap class */}
                         <div className="mb-3">
                             <label className="form-label">Email</label>
                             <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>

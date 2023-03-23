@@ -83,6 +83,7 @@ export default function AddPizzaModal() {
                               <option value="available">available</option>
                               <option value="notAvailable">not available</option>
                             </select>
+                            {/* this is how the enum is set up */}
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Business Partner</label>
@@ -90,6 +91,8 @@ export default function AddPizzaModal() {
                                 <option>Select Business Partner</option>
                                 { data.businessPartners.map((bp) => (
                                     <option key={bp.id} value={bp.id}>{ bp.name }</option>
+                                    // mapping through businessPartners where each will option
+                                    // on the Business Partner dropdown menu
                                 ))}
                             </select>
                         </div>
