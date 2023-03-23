@@ -188,6 +188,7 @@ const mutation = new GraphQLObjectType({
       resolve(parent, args) {
         return Pizza.findByIdAndRemove(args.id);
       }
+      // same as deleteBusinessPartner
     },
     // Update a Pizza
     updatePizza: {
@@ -216,6 +217,8 @@ const mutation = new GraphQLObjectType({
               status: args.status
             }
           },
+          // needs to include the id here since we need to find which pizza object
+          // to update, not sure why $set must used but can look into that
           { new: true }
           // if Pizza is not found in DB, then new Pizza will be created
         );
