@@ -16,3 +16,9 @@ export default function Home() {
     </>
   )
 }
+
+// page displays buttons to open AddBusinessPartnerModal and AddPizzaModal
+// page also displays components that display Pizza data and Business Partner data
+// This page is going to change a ton
+// we'll want a header image, a NavBar, and some basic information about the Pizza Place
+// maybe some images on the side as well
