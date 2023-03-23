@@ -1,6 +1,7 @@
 // schema.js is the file where the GraphQL queries and mutations are
 
 const { pizzas, businessPartners } = require("../sampleData.js");
+// sample data no longer being used
 
 // Mongoose Models
 const Pizza = require("../models/Pizza");
@@ -231,3 +232,5 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation
 });
+// RootQuery and mutation are both objects that must assigned to the query and
+// mutation properties of the object that is the argument of our GraphQLSchema instance
