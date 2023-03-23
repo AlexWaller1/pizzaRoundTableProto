@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Pizza from "./pages/Pizza";
 
+// cache is a storage layer where we can store data in order to allow
+// for faster data retrieval and more ease on the server
 const cache = new InMemoryCache({
   typePolicies: {
     Query: {
@@ -23,16 +25,21 @@ const cache = new InMemoryCache({
     }
   }
 });
+// we define the types of queried data that we want saved, which right now is pizzas and
+// businessPartners
 
 const client = new ApolloClient({
   uri: "http://localhost:3021/graphql",
   cache
 });
+// client is where we specify to our react app where we are retrieving data,
+// and what our cache is
 
 function App() {
   return (
     <>
       <ApolloProvider client={client}>
+        {/* must provide our client variable as prop for ApolloProvider component */}
         <Router>
           <Header />
           <div className="container">
@@ -40,6 +47,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/pizzas/:id" element={<Pizza />} />
               <Route path="*" element={<NotFound />} />
+              {/* defining destinations where the urls will take the user */}
             </Routes>
           </div>
         </Router>
