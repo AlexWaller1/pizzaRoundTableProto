@@ -8,9 +8,11 @@ import  DeletePizzaBtn from "../components/DeletePizzaBtn";
 
 export default function Pizza() {
   const { id } = useParams();
+  // getting id from the url
   const { loading, error, data } = useQuery(GET_PIZZA, {
     variables: { id }
   });
+  // query to get single pizza
 
   if (loading) return <Spinner />;
   if (error) return <p>Something Went Wrong</p>
