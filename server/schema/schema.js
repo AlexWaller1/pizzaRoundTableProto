@@ -102,11 +102,17 @@ const mutation = new GraphQLObjectType({
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
+      // objects posted using this query must abide by the BusinessPartners type
+      // meaning that the objects posted must have certain properties, and are
+      // not allowed to have others
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
         email: { type: GraphQLNonNull(GraphQLString) },
         phone: { type: GraphQLNonNull(GraphQLString) }
       },
+      // the properties that are being posted and their data types
+      // GraphQLNonNull means that we must enter a value for these
+      // properties or the query will not proceed
       resolve(parent, args) {
         const businessPartner = new BusinessPartner({
           name: args.name,
