@@ -8,8 +8,12 @@ export default function AddBusinessPartnerModal() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    // defining state properties and the functions that can make state changes
 
     const [addBusinessPartner] = useMutation(ADD_BUSINESS_PARTNER, {
+        // defining addBusinessPartner as the function that will call the 
+        // useMutation function, the first argument of the useMutation() function is,
+        // GraphQL mutation that we are using
         variables: { name, email, phone },
         update(cache, { data: { addBusinessPartner } }) {
             const { businessPartners } = cache.readQuery({ query: GET_BUSINESS_PARTNERS});
@@ -18,7 +22,13 @@ export default function AddBusinessPartnerModal() {
                 data: { businessPartners: [...businessPartners, addBusinessPartner]}
             });
         }
-    });
+    }
+    // the second argument is an object whose first property is variables, and variables'
+    // value is a destructured object with the properties needed to make the mutation
+    // the other property is the update() function, we don't need to go over every line 
+    // right now, but what update is basically doing is updating the DOM with the new 
+    // Business Partner that is posted without having to refresh the page
+    );
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -32,6 +42,13 @@ export default function AddBusinessPartnerModal() {
         setEmail("");
         setPhone("");
     }
+    // onSubmit() is used when the form is submitted, we prevent the default rerender when
+    // the form is submitted, then return an alert if any of the madatory text fields
+    // is empty
+    // then we call the addBusinessPartner function to make our mutation and update the 
+    // cache, and we also have to make sure the proper state values are passed down
+    // as arguments so they can then be passed down as the variables property to make
+    // the mutation
 
     return (
         <>
