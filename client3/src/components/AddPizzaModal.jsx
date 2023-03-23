@@ -24,6 +24,10 @@ export default function AddPizzaModal() {
 
     // Get Business Partners for Select
     const { loading, error, data } = useQuery(GET_BUSINESS_PARTNERS);
+    // useQuery() is another function from Apollo, here we are getting data from
+    // the GET_BUSINESS_PARTNERS query, loading will tell us if the page is loading
+    // error will tell us if the query errored, and data is an object that we are retrieving
+    // the queried data from
 
 
     const onSubmit = (e) => {
