@@ -47,10 +47,13 @@ export default function AddPizzaModal() {
         // return an alert if name, description, or status are missing
         // then then call the addPizza() function using the properties
         // of the pizza object as the arguments
+        // then we clear the text fields except for the status, as that should return 
+        // the default status of the enum
     }
 
     if (loading) return null;
     if (error) return "Something Went Wrong";
+    // accounts if data is loading or if query errored
 
     return (
         <>
@@ -58,6 +61,7 @@ export default function AddPizzaModal() {
             <>
              <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPizzaModal">
             <div className="d-flex align-items-center">
+                {/* d stands for display */}
                 <FaList className="icon"/>
                 <div>New Pizza</div>
             </div>
@@ -73,6 +77,7 @@ export default function AddPizzaModal() {
                 </div>
                 <div className="modal-body">
                     <form onSubmit={onSubmit}>
+                        {/* using onSubmit function for onSubmit attribute of form jsx element */}
                         <div className="mb-3">
                             <label className="form-label">Name</label>
                             <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
@@ -89,6 +94,7 @@ export default function AddPizzaModal() {
                               value={status} 
                               onChange={(e) => setStatus(e.target.value)}
                             >
+                            {/* using the useState function of setStatus to change dropdown value */}
                               <option value="available">available</option>
                               <option value="notAvailable">not available</option>
                             </select>
