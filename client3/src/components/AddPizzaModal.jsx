@@ -37,11 +37,16 @@ export default function AddPizzaModal() {
         }
         console.log("onSubmit")
         addPizza(name, description, status, businessPartnerId);
+        // todo: don't need businessPartnerId
         
         setName("");
         setDescription("");
         setStatus("available");
         setBusinessPartnerId("");
+        // same deal as the onSubmit for the AddBusinessPartner modal
+        // return an alert if name, description, or status are missing
+        // then then call the addPizza() function using the properties
+        // of the pizza object as the arguments
     }
 
     if (loading) return null;
