@@ -3,6 +3,8 @@ import BusinessPartnerRow from './BusinessPartnerRow';
 import { GET_BUSINESS_PARTNERS } from "../queries/businessPartnerQueries";
 import Spinner from "./Spinner";
 
+// Won't need this component
+// 
 export default function BusinessPartners() {
     const { loading, error, data } = useQuery(GET_BUSINESS_PARTNERS);
 
@@ -10,6 +12,7 @@ export default function BusinessPartners() {
     if (error) return <p>{"Dropped the Pizza :("}</p>
     return <>{ !loading && !error && (
         <table className="table table-hover mt-3">
+            {/* remember to look up bootstrap table classes */}
             <thead>
                 <tr>
                     <th>Name</th>
