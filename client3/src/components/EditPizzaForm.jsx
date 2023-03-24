@@ -32,6 +32,7 @@ export default function EditPizzaForm({ pizza }) {
     // returns alert if no name, description, or status provided
 
     updatePizza(name, description, status);
+    // must provide state properties relevant to pizza object as arguments
   };
 
   return (
