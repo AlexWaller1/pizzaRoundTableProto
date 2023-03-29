@@ -6,6 +6,9 @@ const { pizzas, businessPartners } = require("../sampleData.js");
 // Mongoose Models
 const Pizza = require("../models/Pizza");
 const BusinessPartner = require("../models/BusinessPartner");
+const Appetizer = require("../models/Appetizer");
+const Beverage = require("../models/Beverage");
+const Dessert = require("../models/Dessert");
 // models are imported here so they can be called for queries and mutations
 
 // GraphQL data types that will be used to define data types for properties
