@@ -98,6 +98,12 @@ const BusinessPartnersType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    appetizers: {
+      type: new GraphQLList(AppetizerType),
+      resolve(parent, args) {
+        return Appetizer.find();
+      }
+    },
     pizzas: {
       type: new GraphQLList(PizzaType),
       resolve(parent, args) {
