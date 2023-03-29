@@ -111,7 +111,19 @@ const RootQuery = new GraphQLObjectType({
         return Appetizer.findById(args.id);
       }
     },
-
+    beverages: {
+      type: new GraphQLList(BeverageType),
+      resolve(parent, args) {
+        return Beverage.find();
+      }
+    },
+    beverage: {
+      type: BeverageType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Beverage.findById(args.id);
+      }
+    },
     pizzas: {
       type: new GraphQLList(PizzaType),
       resolve(parent, args) {
