@@ -44,6 +44,18 @@ const PizzaType = new GraphQLObjectType({
 // defining what properties that instances of Pizza can have as they passed from the
 // MongoDB server to the React frontend
 
+// Appetizer Type
+const AppetizerType = new GraphQLObjectType({
+  name: "Appetizer",
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    image: { type: GraphQLString },
+    price: { type: GraphQLString }
+  })
+});
+
 // Business Partner Type
 const BusinessPartnersType = new GraphQLObjectType({
   name: "BusinessPartner",
