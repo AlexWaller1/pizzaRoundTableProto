@@ -196,6 +196,15 @@ const mutation = new GraphQLObjectType({
         return appetizer.save();
       }
     },
+    deleteAppetizer: {
+      type: AppetizerType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        return Appetizer.findByIdAndRemove(args.id);
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
