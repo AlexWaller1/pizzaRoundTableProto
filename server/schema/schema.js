@@ -56,6 +56,18 @@ const AppetizerType = new GraphQLObjectType({
   })
 });
 
+// Beverage Type
+const BeverageType = new GraphQLObjectType({
+  name: "Beverage",
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    image: { type: GraphQLString },
+    price: { type: GraphQLString }
+  })
+});
+
 // Business Partner Type
 const BusinessPartnersType = new GraphQLObjectType({
   name: "BusinessPartner",
