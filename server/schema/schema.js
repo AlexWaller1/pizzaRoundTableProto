@@ -178,30 +178,39 @@ const RootQuery = new GraphQLObjectType({
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
+    addAppetizer: {
+      type: AppetizerType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const appetizer = new Appetizer({
+          name: args.name,
+          description: args.description,
+          image: args.image,
+          price: args.price
+        });
+        return appetizer.save();
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
-      // objects posted using this query must abide by the BusinessPartners type
-      // meaning that the objects posted must have certain properties, and are
-      // not allowed to have others
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
         email: { type: GraphQLNonNull(GraphQLString) },
         phone: { type: GraphQLNonNull(GraphQLString) }
       },
-      // the properties that are being posted and their data types
-      // GraphQLNonNull means that we must enter a value for these
-      // properties or the query will not proceed
       resolve(parent, args) {
         const businessPartner = new BusinessPartner({
           name: args.name,
           email: args.email,
           phone: args.phone
         });
-        // creating new instance of the BusinessPartner model with required
-        // and posted data
         return businessPartner.save();
-        // will save new instance to MongoDB server and return the new instance
       }
     },
     // Delete a Business Partner
