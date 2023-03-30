@@ -243,6 +243,13 @@ const mutation = new GraphQLObjectType({
         return beverage.save();
       }
     },
+    deleteBeverage: {
+      type: BeverageType,
+      args: { id: { type: GraphQLNonNull(GraphQLID) } },
+      resolve(parent, args) {
+        return Beverage.findByIdAndDelete(args.id);
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
