@@ -225,6 +225,24 @@ const mutation = new GraphQLObjectType({
         });
       }
     },
+    addBeverage: {
+      type: BeverageType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const beverage = new Beverage({
+          name: args.name,
+          description: args.description,
+          image: args.image,
+          price: args.price
+        });
+        return beverage.save();
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
