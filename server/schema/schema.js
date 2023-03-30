@@ -250,6 +250,26 @@ const mutation = new GraphQLObjectType({
         return Beverage.findByIdAndDelete(args.id);
       }
     },
+    updateBeverage: {
+      type: BeverageType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        return Beverage.findByIdAndUpdate(args.id, {
+          $set: {
+            name: args.name,
+            description: args.description,
+            image: args.image,
+            price: args.price
+          }
+        });
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
