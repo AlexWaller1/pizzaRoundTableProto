@@ -215,14 +215,18 @@ const mutation = new GraphQLObjectType({
         price: { type: GraphQLString }
       },
       resolve(parent, args) {
-        return Appetizer.findByIdAndUpdate(args.id, {
-          $set: {
-            name: args.name,
-            description: args.description,
-            image: args.image,
-            price: args.price
-          }
-        });
+        return Appetizer.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              description: args.description,
+              image: args.image,
+              price: args.price
+            }
+          },
+          { new: true }
+        );
       }
     },
     addBeverage: {
@@ -260,14 +264,36 @@ const mutation = new GraphQLObjectType({
         price: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve(parent, args) {
-        return Beverage.findByIdAndUpdate(args.id, {
-          $set: {
-            name: args.name,
-            description: args.description,
-            image: args.image,
-            price: args.price
-          }
+        return Beverage.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              description: args.description,
+              image: args.image,
+              price: args.price
+            }
+          },
+          { new: true }
+        );
+      }
+    },
+    addDessert: {
+      type: DessertType,
+      args: {
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const dessert = new Dessert({
+          name: args.name,
+          description: args.description,
+          image: args.image,
+          price: args.price
         });
+        return dessert.save();
       }
     },
     // Add a Business Partner
@@ -290,12 +316,9 @@ const mutation = new GraphQLObjectType({
     // Delete a Business Partner
     deleteBusinessPartner: {
       type: BusinessPartnersType,
-      // BusinessPartnerObjects must abide by the BusinessPartnersType properties
       args: {
         id: { type: GraphQLNonNull(GraphQLID) }
       },
-      // we must include the id as an argument so MongoDB knows which
-      // businessPartner object to delete
       resolve(parent, args) {
         Pizza.find({ businessPartnerId: args.id }).then(pizzas => {
           pizzas.forEach(pizza => {
@@ -304,8 +327,6 @@ const mutation = new GraphQLObjectType({
         });
         return BusinessPartner.findByIdAndRemove(args.id);
       }
-      // todo: we don't need to worry about deleting the Pizza when a business partner
-      // is deleted
     },
     // Add a Pizza
     addPizza: {
@@ -323,8 +344,6 @@ const mutation = new GraphQLObjectType({
           }),
           defaultValue: "available"
         },
-        // this is how an enum is set up, we have to say what the values are,
-        // as well as what we want the default value to be in the dropdown menu
         businessPartnerId: { type: GraphQLNonNull(GraphQLID) }
         // todo: don't need this
       },
@@ -337,9 +356,6 @@ const mutation = new GraphQLObjectType({
         });
         return pizza.save();
       }
-      // same deal as businessPartner, create a new Pizza object, with and assign the
-      // posted data to the new object's values
-      // then we save to MongoDB and return new object
     },
     // Delete a Pizza
     deletePizza: {
@@ -379,10 +395,7 @@ const mutation = new GraphQLObjectType({
               status: args.status
             }
           },
-          // needs to include the id here since we need to find which pizza object
-          // to update, not sure why $set must used but can look into that
           { new: true }
-          // if Pizza is not found in DB, then new Pizza will be created
         );
       }
     }
