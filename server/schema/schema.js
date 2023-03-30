@@ -296,6 +296,13 @@ const mutation = new GraphQLObjectType({
         return dessert.save();
       }
     },
+    deleteDessert: {
+      type: DessertType,
+      args: { id: { type: GraphQLNonNull(GraphQLID) } },
+      resolve(parent, args) {
+        return Dessert.findByIdAndDelete(args.id);
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
