@@ -303,6 +303,30 @@ const mutation = new GraphQLObjectType({
         return Dessert.findByIdAndDelete(args.id);
       }
     },
+    updateDessert: {
+      type: DessertType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLString) },
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        return Dessert.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              description: args.description,
+              image: args.image,
+              price: args.price
+            }
+          },
+          { new: true }
+        );
+      }
+    },
     // Add a Business Partner
     addBusinessPartner: {
       type: BusinessPartnersType,
