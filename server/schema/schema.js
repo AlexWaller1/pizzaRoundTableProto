@@ -403,15 +403,17 @@ const mutation = new GraphQLObjectType({
         id: { type: GraphQLNonNull(GraphQLID) },
         name: { type: GraphQLString },
         description: { type: GraphQLString },
-        status: {
-          type: new GraphQLEnumType({
-            name: "PizzaStatusUpdate",
-            values: {
-              available: { value: "available" },
-              notAvailable: { value: "not available" }
-            }
-          })
-        }
+        image: { type: GraphQLString },
+        price: { type: GraphQLString }
+        // status: {
+        //   type: new GraphQLEnumType({
+        //     name: "PizzaStatusUpdate",
+        //     values: {
+        //       available: { value: "available" },
+        //       notAvailable: { value: "not available" }
+        //     }
+        //   })
+        // }
       },
       resolve(parent, args) {
         return Pizza.findByIdAndUpdate(
@@ -420,7 +422,8 @@ const mutation = new GraphQLObjectType({
             $set: {
               name: args.name,
               description: args.description,
-              status: args.status
+              image: args.image,
+              price: args.price
             }
           },
           { new: true }
