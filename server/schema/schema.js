@@ -351,11 +351,6 @@ const mutation = new GraphQLObjectType({
         id: { type: GraphQLNonNull(GraphQLID) }
       },
       resolve(parent, args) {
-        Pizza.find({ businessPartnerId: args.id }).then(pizzas => {
-          pizzas.forEach(pizza => {
-            Pizza.findByIdAndRemove(pizza.id);
-          });
-        });
         return BusinessPartner.findByIdAndRemove(args.id);
       }
     },
