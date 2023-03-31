@@ -9,15 +9,21 @@ const PizzaSchema = new mongoose.Schema({
   description: {
     type: String
   },
-  status: {
-    type: String,
-    enum: ["available", "not available"]
+  image: {
+    type: String
   },
-  // todo: not needed for the site, let's get rid of it when edits start
-  businessPartnerId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "BusinessPartner"
+  price: {
+    type: String
   }
+  // status: {
+  //   type: String,
+  //   enum: ["available", "not available"]
+  // },
+  // // todo: not needed for the site, let's get rid of it when edits start
+  // businessPartnerId: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "BusinessPartner"
+  // }
   // todo: make sure to add an img property which has a data type of string
 });
 
