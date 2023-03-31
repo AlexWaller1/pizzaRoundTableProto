@@ -237,6 +237,13 @@ const mutation = new GraphQLObjectType({
         }
       }
     },
+    deleteStars: {
+      type: ReviewType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Review.findByIdAndDelete(args.id);
+      }
+    },
     addAppetizer: {
       type: AppetizerType,
       args: {
