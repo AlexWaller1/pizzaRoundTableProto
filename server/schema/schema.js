@@ -29,16 +29,21 @@ const PizzaType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLString },
     description: { type: GraphQLString },
-    status: { type: GraphQLString },
+    image: { type: GraphQLString },
+    price: { type: GraphQLString }
+
+    // status: { type: GraphQLString },
     // todo: don't need businessPartner property for site
-    businessPartner: {
-      type: BusinessPartnersType,
-      resolve(parent, args) {
-        return BusinessPartner.findById(parent.businessPartnerId);
-        // will use the businessPartnerId property of the Pizza object to
-        // return the proper businessPartner object
-      }
-    }
+
+    // businessPartner: {
+    //   type: BusinessPartnersType,
+    //   resolve(parent, args) {
+    //     return BusinessPartner.findById(parent.businessPartnerId);
+
+    //     // will use the businessPartnerId property of the Pizza object to
+    //     // return the proper businessPartner object
+    //   }
+    // }
   })
 });
 // defining what properties that instances of Pizza can have as they passed from the
