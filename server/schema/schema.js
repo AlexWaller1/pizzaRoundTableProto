@@ -121,6 +121,13 @@ const RootQuery = new GraphQLObjectType({
         return Review.find();
       }
     },
+    review: {
+      type: ReviewType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Review.findById(args.id);
+      }
+    },
     appetizers: {
       type: new GraphQLList(AppetizerType),
       resolve(parent, args) {
