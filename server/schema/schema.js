@@ -360,25 +360,27 @@ const mutation = new GraphQLObjectType({
       args: {
         name: { type: GraphQLNonNull(GraphQLString) },
         description: { type: GraphQLNonNull(GraphQLString) },
-        status: {
-          type: new GraphQLEnumType({
-            name: "PizzaStatus",
-            values: {
-              available: { value: "available" },
-              notAvailable: { value: "not available" }
-            }
-          }),
-          defaultValue: "available"
-        },
-        businessPartnerId: { type: GraphQLNonNull(GraphQLID) }
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+        // status: {
+        //   type: new GraphQLEnumType({
+        //     name: "PizzaStatus",
+        //     values: {
+        //       available: { value: "available" },
+        //       notAvailable: { value: "not available" }
+        //     }
+        //   }),
+        //   defaultValue: "available"
+        // },
+        // businessPartnerId: { type: GraphQLNonNull(GraphQLID) }
         // todo: don't need this
       },
       resolve(parent, args) {
         const pizza = new Pizza({
           name: args.name,
           description: args.description,
-          status: args.status,
-          businessPartnerId: args.businessPartnerId
+          image: args.image,
+          price: args.price
         });
         return pizza.save();
       }
