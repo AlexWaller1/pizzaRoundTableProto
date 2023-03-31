@@ -237,11 +237,44 @@ const mutation = new GraphQLObjectType({
         }
       }
     },
-    deleteStars: {
+    deleteReview: {
       type: ReviewType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         return Review.findByIdAndDelete(args.id);
+      }
+    },
+    updateReview: {
+      type: ReviewType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) },
+        title: { type: GraphQLNonNull(GraphQLString) },
+        stars: {
+          type: new GraphQLEnumType({
+            name: "StarStatus",
+            values: {
+              leaveStarRating: { value: "leave a star rating" },
+              one: { value: "1" },
+              two: { value: "2" },
+              three: { value: "3" },
+              four: { value: "4" },
+              five: { value: "5" }
+            }
+          })
+        }
+      },
+      resolve(parent, args) {
+        return Review.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              title: args.title,
+              stars: args.stars,
+              text: args.text
+            }
+          },
+          { new: true }
+        );
       }
     },
     addAppetizer: {
