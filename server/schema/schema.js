@@ -115,6 +115,12 @@ const BusinessPartnersType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    reviews: {
+      type: new GraphQLList(ReviewType),
+      resolve(parent, args) {
+        return Review.find();
+      }
+    },
     appetizers: {
       type: new GraphQLList(AppetizerType),
       resolve(parent, args) {
