@@ -7,7 +7,7 @@ const ReviewSchema = new mongoose.Schema({
   },
   stars: {
     type: String,
-    enum: ["1", "2", "3", "4", "5"]
+    enum: ["leave a star rating", "1", "2", "3", "4", "5"]
   },
   text: {
     type: String

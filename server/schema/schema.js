@@ -208,6 +208,35 @@ const RootQuery = new GraphQLObjectType({
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
+    addReview: {
+      type: ReviewType,
+      args: {
+        title: GraphQLNonNull(GraphQLString),
+        stars: {
+          type: new GraphQLEnumType({
+            name: "StarStatus",
+            values: {
+              leaveStarRating: { value: "leave a star rating" },
+              one: { value: "1" },
+              two: { value: "2" },
+              three: { value: "3" },
+              four: { value: "4" },
+              five: { value: "5" }
+            }
+          }),
+          defaultValue: "leave a star rating"
+        },
+        text: GraphQLNonNull(GraphQLString),
+        resolve(parent, args) {
+          const review = new Review({
+            title: args.title,
+            stars: args.stars,
+            text: args.text
+          });
+          return review.save();
+        }
+      }
+    },
     addAppetizer: {
       type: AppetizerType,
       args: {
