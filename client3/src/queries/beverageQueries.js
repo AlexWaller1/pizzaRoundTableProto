@@ -12,4 +12,17 @@ const GET_BEVERAGES = gql`
   }
 `;
 
+const GET_BEVERAGE = gql`
+  query getBeverage($id: ID!) {
+    beverage(id: $id) {
+      id
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { GET_BEVERAGES };
+export { GET_BEVERAGE };
