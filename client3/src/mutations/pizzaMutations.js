@@ -4,8 +4,8 @@ const ADD_PIZZA = gql`
   mutation AddPizza(
     $name: String!
     $description: String!
-    $status: PizzaStatus!
-    $businessPartnerId: ID!
+    $image: String!
+    $price: String!
   ) {
     addPizza(
       name: $name
