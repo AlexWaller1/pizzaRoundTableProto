@@ -5,7 +5,9 @@ const GET_PIZZAS = gql`
     pizzas {
       id
       name
-      status
+      description
+      image
+      price
     }
   }
 `;
@@ -16,13 +18,8 @@ const GET_PIZZA = gql`
       id
       name
       description
-      status
-      businessPartner {
-        id
-        name
-        email
-        phone
-      }
+      image
+      price
     }
   }
 `;
