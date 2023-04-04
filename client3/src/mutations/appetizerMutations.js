@@ -45,5 +45,18 @@ const UPDATE_APPETIZER = gql`
   }
 `;
 
+const DELETE_APPETIZER = gql`
+  mutation DeleteAppetizer($id: ID!) {
+    deleteAppetizer(id$: id) {
+      id
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { ADD_APPETIZER };
 export { UPDATE_APPETIZER };
+export { DELETE_APPETIZER };
