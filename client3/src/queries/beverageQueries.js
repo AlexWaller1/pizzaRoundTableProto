@@ -1,4 +1,4 @@
-import { gql } from "graphql";
+import { gql } from "@apollo/client";
 
 const GET_BEVERAGES = gql`
   query getBeverages {
