@@ -226,15 +226,15 @@ const mutation = new GraphQLObjectType({
           }),
           defaultValue: "leave a star rating"
         },
-        text: { type: GraphQLNonNull(GraphQLString) },
-        resolve(parent, args) {
-          const review = new Review({
-            title: args.title,
-            stars: args.stars,
-            text: args.text
-          });
-          return review.save();
-        }
+        text: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const review = new Review({
+          title: args.title,
+          stars: args.stars,
+          text: args.text
+        });
+        return review.save();
       }
     },
     deleteReview: {
@@ -261,7 +261,8 @@ const mutation = new GraphQLObjectType({
               five: { value: "5" }
             }
           })
-        }
+        },
+        text: { type: GraphQLNonNull(GraphQLString) }
       },
       resolve(parent, args) {
         return Review.findByIdAndUpdate(
