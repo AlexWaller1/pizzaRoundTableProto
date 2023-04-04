@@ -10,7 +10,7 @@ export default function PizzaCard({ pizza }) {
                   <a className="btn btn-light" href={`/pizzas/${pizza.id}`}>View</a>
                 </div>
                 <p className="small">
-                    Status: <strong>{pizza.status}</strong>
+                    Price: <strong>{pizza.price}</strong>
                 </p>
             </div>
         </div>
