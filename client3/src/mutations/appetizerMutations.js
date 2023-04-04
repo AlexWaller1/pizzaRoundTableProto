@@ -21,4 +21,29 @@ const ADD_APPETIZER = gql`
   }
 `;
 
+const UPDATE_APPETIZER = gql`
+  mutation UpdateAppetizer(
+    $id: ID!
+    $name: String!
+    $description: String!
+    $image: String!
+    $price: String!
+  ) {
+    updateAppetizer(
+      id: $id
+      name: $name
+      description: $description
+      image: $image
+      price: $price
+    ) {
+      id
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { ADD_APPETIZER };
+export { UPDATE_APPETIZER };
