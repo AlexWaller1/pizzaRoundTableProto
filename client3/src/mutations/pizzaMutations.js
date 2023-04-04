@@ -10,19 +10,14 @@ const ADD_PIZZA = gql`
     addPizza(
       name: $name
       description: $description
-      status: $status
-      businessPartnerId: $businessPartnerId
+      image: $image
+      price: $price
     ) {
       id
       name
       description
-      status
-      businessPartner {
-        id
-        name
-        email
-        phone
-      }
+      image
+      price
     }
   }
 `;
@@ -32,24 +27,21 @@ const UPDATE_PIZZA = gql`
     $id: ID!
     $name: String!
     $description: String!
-    $status: PizzaStatusUpdate!
+    $image: String!
+    $price: String!
   ) {
     updatePizza(
       id: $id
       name: $name
       description: $description
-      status: $status
+      image: $image
+      price: $price
     ) {
       id
       name
       description
-      status
-      businessPartner {
-        id
-        name
-        email
-        phone
-      }
+      image
+      price
     }
   }
 `;
