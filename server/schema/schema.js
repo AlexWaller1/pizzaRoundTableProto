@@ -211,7 +211,7 @@ const mutation = new GraphQLObjectType({
     addReview: {
       type: ReviewType,
       args: {
-        title: GraphQLNonNull(GraphQLString),
+        title: { type: GraphQLNonNull(GraphQLString) },
         stars: {
           type: new GraphQLEnumType({
             name: "StarStatus",
@@ -226,7 +226,7 @@ const mutation = new GraphQLObjectType({
           }),
           defaultValue: "leave a star rating"
         },
-        text: GraphQLNonNull(GraphQLString),
+        text: { type: GraphQLNonNull(GraphQLString) },
         resolve(parent, args) {
           const review = new Review({
             title: args.title,
@@ -251,7 +251,7 @@ const mutation = new GraphQLObjectType({
         title: { type: GraphQLNonNull(GraphQLString) },
         stars: {
           type: new GraphQLEnumType({
-            name: "StarStatus",
+            name: "StarStatusUpdate",
             values: {
               leaveStarRating: { value: "leave a star rating" },
               one: { value: "1" },
