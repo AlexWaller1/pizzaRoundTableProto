@@ -45,5 +45,18 @@ const UPDATE_BEVERAGE = gql`
   }
 `;
 
+const DELETE_BEVERAGE = gql`
+  mutation DeleteBeverage($id: ID!) {
+    deleteBeverage(id: $id) {
+      id
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { ADD_BEVERAGE };
 export { UPDATE_BEVERAGE };
+export { DELETE_BEVERAGE };
