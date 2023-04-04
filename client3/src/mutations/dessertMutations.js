@@ -45,5 +45,18 @@ const UPDATE_DESSERT = gql`
   }
 `;
 
+const DELETE_DESSERT = gql`
+  mutation DeleteDessert($id: ID!) {
+    deleteDessert(id: $id) {
+      id
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { ADD_DESSERT };
 export { UPDATE_DESSERT };
+export { DELETE_DESSERT };
