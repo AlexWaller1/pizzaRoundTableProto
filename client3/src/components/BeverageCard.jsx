@@ -1,6 +1,17 @@
 
-export default function BeverageCard() {
+export default function BeverageCard({ beverage }) {
   return (
-    <div>BeverageCard</div>
+    <div className="col-md-4">
+        <div className="card mb-3">
+            <div className="card-body">
+                <div className="d-flex justify-content-between align-items-center">
+                    <h5 className="beverage-title">{beverage.title}</h5>
+                    <a className="btn btn-light" href={`/appetizers/${appetizer.id}`}>View</a>
+                </div>
+                <img src={beverage.img} alt="beverage image" />
+                <h6 className="beverage-price">{beverage.price}</h6>
+            </div>
+        </div>
+    </div>
   )
 }
