@@ -1,5 +1,4 @@
 
-
 export default function AppetizerCard({ appetizer }) {
   return (
     <div className="col-md-4">

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from "@apollo/client";
 import { GET_APPETIZERS } from '../queries/appetizerQueries';
+import AppetizerCard from './AppetizerCard';
 
 
 export default function Appetizers() {
