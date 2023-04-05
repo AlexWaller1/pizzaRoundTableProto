@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_BEVERAGES } from '../queries/beverageQueries';
+import BeverageCard from './BeverageCard';
 
 export default function Beverages() {
   const { loading, error, data } = useQuery(GET_BEVERAGES);
