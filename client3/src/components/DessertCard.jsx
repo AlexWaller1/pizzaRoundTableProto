@@ -1,4 +1,3 @@
-import Beverage from "../../../server/models/Beverage";
 
 export default function DessertCard({ dessert }) {
   return (

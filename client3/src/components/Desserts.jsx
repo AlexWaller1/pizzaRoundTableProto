@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from '@apollo/client'
 import { GET_DESSERTS } from '../queries/dessertQueries';
+import DessertCard from './DessertCard';
 
 export default function Desserts() {
   const { loading, error, data } = useQuery(GET_DESSERTS);
