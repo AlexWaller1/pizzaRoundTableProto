@@ -7,6 +7,16 @@ export default function Beverages() {
   if (loading) return <h3>Loading Beverages</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
-    <div>Beverages</div>
+    <>
+      {
+        data.beverages.length > 0 ? <div className="row mt-3">
+            {
+                data.beverages.map(beverage => (
+                    <BeverageCard key={beverage.id} beverage={beverage}/>
+                ))
+            }
+        </div> : <div></div>
+      }
+    </>
   )
 }
