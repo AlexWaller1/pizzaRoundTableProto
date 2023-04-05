@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowswerRouter as Router, Routes, Routes, Link } from "react-router-dom";
+import { BrowswerRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Pizzas from './Pizzas';
 import Appetizers from './Appetizers';
 import Beverages from './Beverages';
@@ -7,6 +7,11 @@ import Desserts from './Desserts';
 
 export default function RouterLinks() {
   return (
-    <div>RouterLinks</div>
+    <Routes>
+        <Route path="/pizzas" element={<Pizzas/>} />
+        <Route path="/appetizers" element={<Appetizers/>}/>
+        <Route path="/beverages" element={<Beverages/>} />
+        <Route path="/desserts" element={<Desserts/>}/>
+    </Routes>
   )
 }
