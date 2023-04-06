@@ -62,6 +62,18 @@ const ReviewType = new GraphQLObjectType({
   })
 });
 
+// Cart Type
+const CartType = new GraphQLObjectType({
+  name: "Cart",
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString },
+    description: { type: GraphQLString },
+    image: { type: GraphQLString },
+    price: { type: GraphQLString }
+  })
+});
+
 // Appetizer Type
 const AppetizerType = new GraphQLObjectType({
   name: "Appetizer",
