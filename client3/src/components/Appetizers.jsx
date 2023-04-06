@@ -14,7 +14,7 @@ export default function Appetizers() {
       {data.appetizers.length > 0 ? (
         <div className="row mt-3">
            {data.appetizers.map(app => (
-            <AppetizerCard key={pizza.id} appetizer={app}/>
+            <AppetizerCard key={app.id} appetizer={app}/>
            ))}
         </div>
       ) : <div>No Appetizers</div>}

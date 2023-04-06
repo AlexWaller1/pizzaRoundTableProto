@@ -45,12 +45,8 @@ function App() {
         <Router>
           <Header />
           <div className="container">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/pizzas/:id" element={<Pizza />} />
-              <Route path="*" element={<NotFound />} />
-              {/* defining destinations where the urls will take the user */}
-            </Routes>
+            <NavLinks />
+            <RouterLinks />
           </div>
         </Router>
       </ApolloProvider>
