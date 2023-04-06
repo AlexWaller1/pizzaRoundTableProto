@@ -4,6 +4,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Pizza from "./pages/Pizza";
+import RouterLinks from "./components/RouterLinks";
+import NavLinks from "./components/NavLinks";
 
 // cache is a storage layer where we can store data in order to allow
 // for faster data retrieval and more ease on the server
