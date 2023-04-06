@@ -5,7 +5,7 @@ export default function DessertCard({ dessert }) {
         <div className="card mb-3">
             <div className="card-body">
                 <div className="d-flex justify-content-between align-content-center">
-                    <h5 className="dessert-title">{dessert.title}</h5>
+                    <h5 className="dessert-title">{dessert.name}</h5>
                     <a className="btn btn-light" href={`/desserts/${dessert.id}`}></a>
                 </div>
                 <img src={dessert.image} alt="dessert image" />

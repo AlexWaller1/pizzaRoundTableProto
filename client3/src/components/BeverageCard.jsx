@@ -5,7 +5,7 @@ export default function BeverageCard({ beverage }) {
         <div className="card mb-3">
             <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center">
-                    <h5 className="beverage-title">{beverage.title}</h5>
+                    <h5 className="beverage-title">{beverage.name}</h5>
                     <a className="btn btn-light" href={`/beverages/${beverage.id}`}>View</a>
                 </div>
                 <img src={beverage.img} alt="beverage image" />
