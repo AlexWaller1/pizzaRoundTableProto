@@ -13,6 +13,26 @@ export default function BeverageShowPage() {
   if (error) return <h3>Something Went Wrong</h3>
 
   return (
-    <></>
+    <>
+      {
+        !loading && !error && (
+            <div className="mx-auto w-75 card p-5">
+                <Link to="/beverages" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+                    Back
+                </Link>
+                <div>
+                    <div>
+                        <img src={ data.beverage.image } alt="beverage image" />
+                    </div>
+                    <div>
+                        <h1>{ data.beverage.name }</h1>
+                        <h3>{ data.beverage.description }</h3>
+                        <h2>{ data.beverage.price }</h2>
+                    </div>
+                </div>
+            </div>
+        )
+      }
+    </>
   )
 }
