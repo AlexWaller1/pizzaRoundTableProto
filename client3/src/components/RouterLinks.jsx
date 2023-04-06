@@ -7,6 +7,7 @@ import Desserts from './Desserts';
 import PizzaShowPage from './PizzaShowPage';
 import AppetizerShowPage from './AppetizerShowPage';
 import BeverageShowPage from './BeverageShowPage';
+import DessertShowPage from './DessertShowPage';
 
 export default function RouterLinks() {
   return (
@@ -18,6 +19,7 @@ export default function RouterLinks() {
         <Route path="/beverages" element={<Beverages/>} />
         <Route path="/beverages/:id" element={<BeverageShowPage/>}/>
         <Route path="/desserts" element={<Desserts/>}/>
+        <Route path="/desserts/:id" element={<DessertShowPage/>} />
     </Routes>
   )
 }
