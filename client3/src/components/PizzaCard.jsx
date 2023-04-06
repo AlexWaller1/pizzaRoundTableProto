@@ -9,6 +9,7 @@ export default function PizzaCard({ pizza }) {
                   <h5 className="pizza-title">{pizza.name}</h5>
                   <a className="btn btn-light" href={`/pizzas/${pizza.id}`}>View</a>
                 </div>
+                <img src={pizza.image} alt="pizza-image" />
                 <p className="small">
                     Price: <strong>{pizza.price}</strong>
                 </p>
