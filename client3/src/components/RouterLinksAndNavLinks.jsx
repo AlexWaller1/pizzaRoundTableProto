@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import RouterLinks from './RouterLinks'
 import NavLinks from './NavLinks'
 
@@ -6,8 +6,13 @@ import NavLinks from './NavLinks'
 export default function RouterLinksAndNavLinks() {
     const [cart, setCart] = useState([]);
 
+    const [cartUniqueId, setCartId] = useState(0);
+    
     let addCartItem = (item) => {
-      let cartId = { cartId: useId() };
+      cartUniqueId++;
+      setCartId(cartUniqueId);
+
+      let cartId = { cartId: cartUniqueId };
   
       let cartItem = { ...cartId, ...item };
   
@@ -18,9 +23,7 @@ export default function RouterLinksAndNavLinks() {
   
     let deleteCartItem = (id) => {
   
-      let newCart = cart.filter(item => {
-          item.cartId !== id
-      })
+      let newCart = cart.filter(item => item.cartId !== id);
   
       setCart(newCart);
     }
