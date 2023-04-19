@@ -129,6 +129,19 @@ const BusinessPartnersType = new GraphQLObjectType({
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
+    carts: {
+      type: new GraphQLList(CartType),
+      resolve(parent, args) {
+        return Cart.find();
+      }
+    },
+    cart: {
+      type: CartType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return Cart.findById(args.id);
+      }
+    },
     reviews: {
       type: new GraphQLList(ReviewType),
       resolve(parent, args) {
