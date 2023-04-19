@@ -42,8 +42,8 @@ function App() {
       <ApolloProvider client={client}>
         {/* must provide our client variable as prop for ApolloProvider component */}
         <Router>
-          <Header />
           <div className="container">
+            <Header />
             <RouterLinksAndNavLinks />
           </div>
         </Router>

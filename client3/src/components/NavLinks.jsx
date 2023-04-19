@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export default function NavLinks() {
+export default function NavLinks({ cart }) {
+  console.log(localStorage);
   return (
     <ul className="nav-links-list">
         <h4>
@@ -19,6 +20,7 @@ export default function NavLinks() {
         <h4>
             <Link to="/desserts">Desserts</Link>
         </h4>
+        <h4>Cart: {cart.length}</h4>
     </ul>
   )
 }

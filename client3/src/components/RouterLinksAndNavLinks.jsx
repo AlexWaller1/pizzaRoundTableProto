@@ -9,16 +9,22 @@ export default function RouterLinksAndNavLinks() {
     const [cartUniqueId, setCartId] = useState(0);
     
     let addCartItem = (item) => {
-      cartUniqueId++;
-      setCartId(cartUniqueId);
+
+      let newCartId = cartUniqueId + 1;
+      setCartId(newCartId);
 
       let cartId = { cartId: cartUniqueId };
   
       let cartItem = { ...cartId, ...item };
   
-      let newCart = [...cart, ...cartItem];
+      cart.push(cartItem);
+
+      let newCart = [...cart];
   
       setCart(newCart);
+
+      console.log(cart.length);
+      console.log(cart);
     }
   
     let deleteCartItem = (id) => {
@@ -30,8 +36,9 @@ export default function RouterLinksAndNavLinks() {
   
   return (
     <>
-      <RouterLinks cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>
+      
       <NavLinks cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>
+      <RouterLinks cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>
     </>
   )
 }
