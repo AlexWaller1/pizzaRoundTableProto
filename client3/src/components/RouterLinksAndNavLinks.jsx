@@ -1,30 +1,43 @@
 import React, { useState } from 'react'
 import RouterLinks from './RouterLinks'
 import NavLinks from './NavLinks'
+import { useMutation } from '@apollo/client';
+import { ADD_CART, DELETE_CART } from '../mutations/cartMutations';
+import { GET_CARTS } from '../queries/cartQueries';
 
 
 export default function RouterLinksAndNavLinks() {
+
+    const [itemId, setItemId] = useState("");
+    const [newName, setNewName] = useState("");
+    const [description, setDescription] = useState("");
+    const [image, setImage] = useState("");
+    const [price, setPrice] = useState("");
+
+    const [addToCart] = useMutation(ADD_CART, {
+        variables: { itemId, newName, description, image, price},
+        update (cache, { data: { addToCart } }) {
+            const { carts } = cache.readQuery({ query: GET_CARTS });
+            cache.writeQuery({
+                query: GET_CARTS,
+                data: { carts: [...carts, addToCart] }
+            });
+        }
+    })
     const [cart, setCart] = useState([]);
 
     const [cartUniqueId, setCartId] = useState(0);
     
     let addCartItem = (item) => {
+      setItemId(item.id);
+      setNewName(item.name);
+      setDescription(item.description);
+      setImage(item.image);
+      setPrice(item.price);
 
-      let newCartId = cartUniqueId + 1;
-      setCartId(newCartId);
+      addToCart(itemId, newName, description, image, price);
 
-      let cartId = { cartId: cartUniqueId };
-  
-      let cartItem = { ...cartId, ...item };
-  
-      cart.push(cartItem);
-
-      let newCart = [...cart];
-  
-      setCart(newCart);
-
-      console.log(cart.length);
-      console.log(cart);
+      
     }
   
     let deleteCartItem = (id) => {
