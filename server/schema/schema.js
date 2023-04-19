@@ -67,6 +67,7 @@ const CartType = new GraphQLObjectType({
   name: "Cart",
   fields: () => ({
     id: { type: GraphQLID },
+    itemId: { type: GraphQLString },
     name: { type: GraphQLString },
     description: { type: GraphQLString },
     image: { type: GraphQLString },
