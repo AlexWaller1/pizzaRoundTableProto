@@ -325,6 +325,15 @@ const mutation = new GraphQLObjectType({
         return cart.save();
       }
     },
+    deleteCart: {
+      type: CartType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        return Cart.findByIdAndRemove(args.id);
+      }
+    },
     addAppetizer: {
       type: AppetizerType,
       args: {
