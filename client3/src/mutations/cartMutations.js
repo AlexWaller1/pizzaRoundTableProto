@@ -25,4 +25,18 @@ const ADD_CART = gql`
   }
 `;
 
+const DELETE_CART = gql`
+  mutation DeleteCart($id: ID!) {
+    deleteCart(id: $id) {
+      id
+      itemId
+      name
+      description
+      image
+      price
+    }
+  }
+`;
+
 export { ADD_CART };
+export { DELETE_CART };
