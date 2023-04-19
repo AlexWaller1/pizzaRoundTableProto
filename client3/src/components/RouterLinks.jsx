@@ -9,28 +9,7 @@ import AppetizerShowPage from './AppetizerShowPage';
 import BeverageShowPage from './BeverageShowPage';
 import DessertShowPage from './DessertShowPage';
 
-export default function RouterLinks() {
-
-  const [cart, setCart] = useState([]);
-
-  let addCartItem = (item) => {
-    let cartId = { cartId: useId() };
-
-    let cartItem = { ...cartId, ...item };
-
-    let newCart = [...cart, ...cartItem];
-
-    setCart(newCart);
-  }
-
-  let deleteCartItem = (id) => {
-
-    let newCart = cart.filter(item => {
-        item.cartId !== id
-    })
-
-    setCart(newCart);
-  }
+export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
 
   return (
     <Routes>
