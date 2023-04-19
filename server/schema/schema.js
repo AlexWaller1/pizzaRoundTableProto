@@ -305,6 +305,26 @@ const mutation = new GraphQLObjectType({
         );
       }
     },
+    addCart: {
+      type: CartType,
+      args: {
+        itemId: { type: GraphQLNonNull(GraphQLString) },
+        name: { type: GraphQLNonNull(GraphQLString) },
+        description: { type: GraphQLNonNull(GraphQLString) },
+        image: { type: GraphQLNonNull(GraphQLString) },
+        price: { type: GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parent, args) {
+        const cart = new Cart({
+          itemId: args.itemId,
+          name: args.name,
+          description: args.description,
+          image: args.image,
+          price: args.price
+        });
+        return cart.save();
+      }
+    },
     addAppetizer: {
       type: AppetizerType,
       args: {
