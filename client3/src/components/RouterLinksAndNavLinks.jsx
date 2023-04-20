@@ -7,7 +7,8 @@ import { GET_CARTS } from '../queries/cartQueries';
 
 
 export default function RouterLinksAndNavLinks() {
-
+    
+    const [cartId, setCartId] = useState("");
     const [itemId, setItemId] = useState("");
     const [newName, setNewName] = useState("");
     const [description, setDescription] = useState("");
@@ -24,9 +25,13 @@ export default function RouterLinksAndNavLinks() {
             });
         }
     })
-    const [cart, setCart] = useState([]);
 
-    const [cartUniqueId, setCartId] = useState(0);
+    const [deleteFromCart] = useMutation(DELETE_CART, {
+        variables: { cartId },
+        refetchQueries: [{ query: GET_CARTS }]
+    })
+
+    const [cart, setCart] = useState([]);
     
     let addCartItem = (item) => {
       setItemId(item.id);
@@ -36,15 +41,13 @@ export default function RouterLinksAndNavLinks() {
       setPrice(item.price);
 
       addToCart(itemId, newName, description, image, price);
-
-      
     }
   
     let deleteCartItem = (id) => {
   
-      let newCart = cart.filter(item => item.cartId !== id);
+      setCartId(id);
   
-      setCart(newCart);
+      deleteFromCart(cartId);
     }
   
   return (
