@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { GET_CARTS } from '../queries/cartQueries';
+import { useQuery } from "@apollo/client"
 
 export default function NavLinks({ cart }) {
-  console.log(localStorage);
+  
+  const { loading, error, data } = useQuery(GET_CARTS, {
+    
+  });
+  if (loading) return <h3>Loading Cart Data</h3>
+  if (error) return <h3>Something Went Wrong</h3>
   return (
     <ul className="nav-links-list">
         <h4>
@@ -20,7 +27,7 @@ export default function NavLinks({ cart }) {
         <h4>
             <Link to="/desserts">Desserts</Link>
         </h4>
-        <h4>Cart: {cart.length}</h4>
+        <h4>Cart: {data.carts.length}</h4>
     </ul>
   )
 }
