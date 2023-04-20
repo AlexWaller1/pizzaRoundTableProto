@@ -11,6 +11,7 @@ export default function DessertShowPage({ addCartItem }) {
 
   if (loading) return <h3>Dessert Loading...</h3>
   if (error) return <h3>Something Went Wrong</h3>
+console.log(data.dessert, "data")
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function DessertShowPage({ addCartItem }) {
                 </Link>
                 <div>
                     <div>
-                        <img src={data.dessert.image} alt="dessert image" />
+                        <img src='234yrngje35r3r43445' alt="dessert image" />
                     </div>
                     <div>
                         <h1>{ data.dessert.name }</h1>
