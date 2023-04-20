@@ -5,9 +5,7 @@ import { useQuery } from "@apollo/client"
 
 export default function NavLinks({ cart }) {
   
-  const { loading, error, data } = useQuery(GET_CARTS, {
-    
-  });
+  const { loading, error, data } = useQuery(GET_CARTS);
   if (loading) return <h3>Loading Cart Data</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
