@@ -11,7 +11,6 @@ export default function DessertShowPage({ addCartItem }) {
 
   if (loading) return <h3>Dessert Loading...</h3>
   if (error) return <h3>Something Went Wrong</h3>
-console.log(data.dessert, "data")
 
   return (
     <>
