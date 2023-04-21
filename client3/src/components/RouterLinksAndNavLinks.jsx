@@ -2,24 +2,17 @@ import React, { useState } from 'react'
 import RouterLinks from './RouterLinks'
 import NavLinks from './NavLinks'
 import { useMutation } from '@apollo/client';
-import { ADD_CART, DELETE_CART } from '../mutations/cartMutations';
+import { ADD_CART } from '../mutations/cartMutations';
 import { GET_CARTS } from '../queries/cartQueries';
-import { useNavigate } from 'react-router-dom';
-
 
 export default function RouterLinksAndNavLinks() {
-    
-    const navigate = useNavigate()
 
-    const [id, setCartId] = useState("");
     const [itemId, setItemId] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
     const [price, setPrice] = useState("");
     
-
- 
     let addCartItem = (item) => {
       setItemId(item.id);
       setName(item.name);
@@ -30,10 +23,7 @@ export default function RouterLinksAndNavLinks() {
       if(itemId, name, description, image, price){
           addToCart(itemId, name, description, image, price)
       }
-
-            
-            
-        }
+    }
 
         
       
@@ -50,30 +40,10 @@ export default function RouterLinksAndNavLinks() {
         }
     })
     
-    const [deleteFromCart] = useMutation(DELETE_CART, {
-        
-        variables: { id },
-        onCompleted: navigate("/cart"),
-        refetchQueries: [{ query: GET_CARTS }]
-    })
-    
-    const [cart, setCart] = useState([]);
-    
-    
-    let deleteCartItem = (cartId) => {
-  
-     setCartId(cartId);
-
-     if (id) {
-        deleteFromCart(cartId);
-     }
-    }
-  
-  return (
-    <>
-      
-      <NavLinks cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>
-      <RouterLinks cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>
-    </>
+    return (
+      <>
+        <NavLinks  addCartItem={ addCartItem } />
+        <RouterLinks addCartItem={ addCartItem }/>
+      </>
   )
 }

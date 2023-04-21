@@ -1,7 +1,7 @@
 import React from 'react'
 import DeleteFromCartBtn from './DeleteFromCartBtn'
 
-export default function CartCard({ cart, deleteCartItem }) {
+export default function CartCard({ cart }) {
   return (
     <div className='col-md-12'>
         <div className="card mb-3 w-70">
