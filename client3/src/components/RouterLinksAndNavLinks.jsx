@@ -26,17 +26,14 @@ export default function RouterLinksAndNavLinks() {
     }
 
         
-      
-
-        
-       const [addToCart] = useMutation(ADD_CART, {
-            variables: { itemId, name, description, image, price },
-            update (cache, { data: { addToCart } }) {
-                const { carts } = cache.readQuery({ query: GET_CARTS });
-                cache.writeQuery({
-                query: GET_CARTS,
-                data: { carts: [...carts, addToCart] }
-            });
+    const [addToCart] = useMutation(ADD_CART, {
+       variables: { itemId, name, description, image, price },
+       update (cache, { data: { addToCart } }) {
+         const { carts } = cache.readQuery({ query: GET_CARTS });
+         cache.writeQuery({
+            query: GET_CARTS,
+            data: { carts: [...carts, addToCart] }
+          });
         }
     })
     
