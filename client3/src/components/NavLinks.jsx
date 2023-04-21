@@ -25,7 +25,9 @@ export default function NavLinks({ cart }) {
         <h4>
             <Link to="/desserts">Desserts</Link>
         </h4>
-        <h4>Cart: {data.carts.length}</h4>
+        <h4>
+            <Link to="/cart">{`Cart: ${ data.carts.length }`}</Link>
+        </h4>
     </ul>
   )
 }

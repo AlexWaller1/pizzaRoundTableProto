@@ -16,10 +16,11 @@ export default function Carts() {
       { data.carts.length > 0 ? (
         <div className="row mt-3">
           {data.carts.map(cart => (
-            <CartCard key={ app.id } cart={ cart }/>
+            <CartCard key={ cart.id } cart={ cart }/>
           ))}
         </div>
       ) : <div>No Cart Items</div>}
+      <div className="total-price-div">{ totalPrice }</div>
     </>
   )
 }
