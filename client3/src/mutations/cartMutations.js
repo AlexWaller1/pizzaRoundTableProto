@@ -29,11 +29,6 @@ const DELETE_CART = gql`
   mutation DeleteCart($id: ID!) {
     deleteCart(id: $id) {
       id
-      itemId
-      name
-      description
-      image
-      price
     }
   }
 `;

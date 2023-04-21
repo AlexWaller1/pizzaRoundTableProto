@@ -22,7 +22,7 @@ export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
         <Route path="/beverages/:id" element={<BeverageShowPage cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem }/>}/>
         <Route path="/desserts" element={<Desserts/>}/>
         <Route path="/desserts/:id" element={<DessertShowPage cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem } />} />
-        <Route path="/cart" element={<Carts/>} />
+        <Route path="/cart" element={<Carts deleteCartItem={ deleteCartItem }/>} />
     </Routes>
   )
 }

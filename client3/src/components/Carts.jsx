@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CARTS } from '../queries/cartQueries';
 import CartCard from './CartCard';
 
-export default function Carts() {
+export default function Carts({ deleteCartItem }) {
   
   const { loading, error, data } = useQuery(GET_CARTS);
   if (loading) return <h3>Loading Cart</h3>
@@ -23,7 +23,7 @@ export default function Carts() {
       { data.carts.length > 0 ? (
         <div className="row mt-3">
           {data.carts.map(cart => (
-            <CartCard key={ cart.id } cart={ cart }/>
+            <CartCard key={ cart.id } cart={ cart } deleteCartItem={ deleteCartItem }/>
           ))}
         </div>
       ) : <div>No Cart Items</div>}

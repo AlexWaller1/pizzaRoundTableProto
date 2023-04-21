@@ -4,11 +4,14 @@ import NavLinks from './NavLinks'
 import { useMutation } from '@apollo/client';
 import { ADD_CART, DELETE_CART } from '../mutations/cartMutations';
 import { GET_CARTS } from '../queries/cartQueries';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function RouterLinksAndNavLinks() {
     
-    const [cartId, setCartId] = useState("");
+    const navigate = useNavigate()
+
+    const [id, setCartId] = useState("");
     const [itemId, setItemId] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -48,18 +51,22 @@ export default function RouterLinksAndNavLinks() {
     })
     
     const [deleteFromCart] = useMutation(DELETE_CART, {
-        variables: { cartId },
+        
+        variables: { id },
+        onCompleted: navigate("/cart"),
         refetchQueries: [{ query: GET_CARTS }]
     })
     
     const [cart, setCart] = useState([]);
     
     
-    let deleteCartItem = (id) => {
+    let deleteCartItem = (cartId) => {
   
-      setCartId(id);
-  
-      deleteFromCart(cartId);
+     setCartId(cartId);
+
+     if (id) {
+        deleteFromCart(cartId);
+     }
     }
   
   return (
