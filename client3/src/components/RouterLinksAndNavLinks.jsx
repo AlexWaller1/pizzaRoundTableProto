@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RouterLinks from './RouterLinks'
 import NavLinks from './NavLinks'
 import { useMutation } from '@apollo/client';
@@ -12,29 +12,33 @@ export default function RouterLinksAndNavLinks() {
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
     const [price, setPrice] = useState("");
+
+    useEffect(() => {
+      if (itemId, name, description, image, price) {
+        addToCart(itemId, name, description, image, price);
+      }
+      
+    }, [price]);
     
     let addCartItem = (item) => {
+      console.log("clicked!!!");
       setItemId(item.id);
       setName(item.name);
       setDescription(item.description);
       setImage(item.image);
       setPrice(item.price);
-       
-      if(itemId, name, description, image, price){
-          addToCart(itemId, name, description, image, price)
-      }
     }
 
         
     const [addToCart] = useMutation(ADD_CART, {
        variables: { itemId, name, description, image, price },
        update (cache, { data: { addToCart } }) {
-         const { carts } = cache.readQuery({ query: GET_CARTS });
-         cache.writeQuery({
+        const { carts } = cache.readQuery({ query: GET_CARTS });
+        cache.writeQuery({
             query: GET_CARTS,
             data: { carts: [...carts, addToCart] }
-          });
-        }
+        });
+       }
     })
     
     return (
