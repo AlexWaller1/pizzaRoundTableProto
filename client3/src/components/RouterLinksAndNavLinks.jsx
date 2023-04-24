@@ -16,8 +16,8 @@ export default function RouterLinksAndNavLinks() {
     useEffect(() => {
       if (itemId, name, description, image, price) {
         addToCart(itemId, name, description, image, price);
+        console.log("item added to cart!");
       }
-      
     }, [price]);
     
     let addCartItem = (item) => {
