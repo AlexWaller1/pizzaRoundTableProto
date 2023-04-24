@@ -26,8 +26,16 @@ export default function AddReviewModal() {
         if(title === "" || stars === "" || text === "") {
             return alert("Please Fill in all Fields");
         }
+        console.log("onSubmit");
+        addReview(title, stars, text);
+
+        setTitle("");
+        setStars("");
+        setText("");
     }
+    if (loading) return null;
+    if (error) return "Something Went Wrong";
   return (
-    <div>AddReviewModal</div>
+    <></>
   )
 }
