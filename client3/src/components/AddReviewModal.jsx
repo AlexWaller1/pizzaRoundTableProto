@@ -19,11 +19,9 @@ export default function AddReviewModal() {
         }
     });
 
-    const { loading, error, data } = useQuery(GET_REVIEWS);
-
     const onSubmit = (e) => {
         e.preventDefault();
-        if(title === "" || stars === "" || text === "") {
+        if(title === "" || stars === "" || stars === "leave a star rating" || text === "") {
             return alert("Please Fill in all Fields");
         }
         console.log("onSubmit");
@@ -33,8 +31,7 @@ export default function AddReviewModal() {
         setStars("");
         setText("");
     }
-    if (loading) return null;
-    if (error) return "Something Went Wrong";
+    
   return (
     <>
       { !loading && !error && (
@@ -64,11 +61,12 @@ export default function AddReviewModal() {
                         <div className="mb-3" id="review-stars">
                             <label className="form-label">Stars</label>
                             <select id="stars" className="form-select" value={stars} onChange={ (e) => setStars(e.target.value) }>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="leave a star rating">leave a star rating</option>
+                                <option value="1">one</option>
+                                <option value="2">two</option>
+                                <option value="3">three</option>
+                                <option value="4">four</option>
+                                <option value="5">five</option>
                             </select>
                         </div>
                         <div className="mb-3" id="review-text">
