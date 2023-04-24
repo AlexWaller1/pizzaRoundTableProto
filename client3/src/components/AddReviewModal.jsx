@@ -4,6 +4,20 @@ import { GET_REVIEWS } from '../queries/reviewQueries';
 import { ADD_REVIEW } from '../mutations/reviewMutations';
 
 export default function AddReviewModal() {
+    const [title, setTitle] = useState("");
+    const [stars, setStars] = useState("1");
+    const [text, setText] = useState("");
+
+    const [addReview] = useMutation(ADD_REVIEW, {
+        variables: { title, stars, text },
+        update(cache, { data: { addReview } }) {
+            const { reviews } = cache.readQuery({ query: GET_REVIEWS });
+            cache.writeQuery({
+                query: GET_REVIEWS,
+                data: { reviews: [ reviews, addReview] }
+            });
+        }
+    })
   return (
     <div>AddReviewModal</div>
   )
