@@ -50,7 +50,12 @@ export default function AddReviewModal() {
           {/* Add Review Modal */}
           <div className="modal fade" id="addReviewModal" aria-labelledby="addReviewLabel" aria-hidden="true">
             <div className="modal-dialog">
-
+              <div className="modal-content">
+                <div className="modal-header">
+                    <h1 className="modal-title fs-5" id="addReviewModalLabel">New Review</h1>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">Close Modal</button>
+                </div>
+              </div>
             </div>
           </div>
 
