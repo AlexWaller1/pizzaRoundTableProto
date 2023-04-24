@@ -55,6 +55,14 @@ export default function AddReviewModal() {
                     <h1 className="modal-title fs-5" id="addReviewModalLabel">New Review</h1>
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">Close Modal</button>
                 </div>
+                <div className="modal-body">
+                    <form onSubmit={onSubmit}>
+                        <div className="mb-3">
+                            <label className="form-label">Title</label>
+                            <input type="text" className="form-control" id="name" value={ (e) => setTitle(e.target.value) } />
+                        </div>
+                    </form>
+                </div>
               </div>
             </div>
           </div>
