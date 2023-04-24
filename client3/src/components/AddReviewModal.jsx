@@ -61,6 +61,16 @@ export default function AddReviewModal() {
                             <label className="form-label">Title</label>
                             <input type="text" className="form-control" id="name" value={ (e) => setTitle(e.target.value) } />
                         </div>
+                        <div className="mb-3">
+                            <label className="form-label">Stars</label>
+                            <select id="stars" className="form-select" value={stars} onChange={ (e) => setStars(e.target.value) }>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
               </div>
