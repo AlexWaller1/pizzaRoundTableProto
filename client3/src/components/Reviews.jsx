@@ -15,7 +15,7 @@ export default function Reviews() {
                     <ReviewCard key={ review.id } review={ review } />
                 ))
             }
-        </div> : <div></div>
+        </div> : <div>No Reviews</div>
     }</>
   )
 }
