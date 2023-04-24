@@ -17,7 +17,16 @@ export default function AddReviewModal() {
                 data: { reviews: [ reviews, addReview] }
             });
         }
-    })
+    });
+
+    const { loading, error, data } = useQuery(GET_REVIEWS);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        if(title === "" || stars === "" || text === "") {
+            return alert("Please Fill in all Fields");
+        }
+    }
   return (
     <div>AddReviewModal</div>
   )
