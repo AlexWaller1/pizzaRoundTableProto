@@ -57,11 +57,11 @@ export default function AddReviewModal() {
                 </div>
                 <div className="modal-body">
                     <form onSubmit={onSubmit}>
-                        <div className="mb-3">
+                        <div className="mb-3" id="review-title">
                             <label className="form-label">Title</label>
                             <input type="text" className="form-control" id="name" value={ (e) => setTitle(e.target.value) } />
                         </div>
-                        <div className="mb-3">
+                        <div className="mb-3" id="review-stars">
                             <label className="form-label">Stars</label>
                             <select id="stars" className="form-select" value={stars} onChange={ (e) => setStars(e.target.value) }>
                                 <option value="1">1</option>
@@ -70,6 +70,10 @@ export default function AddReviewModal() {
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
+                        </div>
+                        <div className="mb-3" id="review-text">
+                            <label className="form-label">Review Text</label>
+                            <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value) }></textarea>
                         </div>
                     </form>
                 </div>
