@@ -34,7 +34,7 @@ export default function AddReviewModal() {
     
   return (
     <>
-      { !loading && !error && (
+      {  
         <>
         { /* Button to have modal appear */}
           <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal">
@@ -80,7 +80,7 @@ export default function AddReviewModal() {
             </div>
           </div>
         </>
-      )}
+      }
     </>
   )
 }
