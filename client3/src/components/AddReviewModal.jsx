@@ -50,23 +50,23 @@ export default function AddReviewModal() {
               <div className="modal-content">
                 <div className="modal-header">
                     <h1 className="modal-title fs-5" id="addReviewModalLabel">New Review</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">Close Modal</button>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
                     <form onSubmit={onSubmit}>
                         <div className="mb-3" id="review-title">
                             <label className="form-label">Title</label>
-                            <input type="text" className="form-control" id="name" value={ (e) => setTitle(e.target.value) } />
+                            <input type="text" className="form-control" id="name" value={title} onChange={ (e) => setTitle(e.target.value) } />
                         </div>
                         <div className="mb-3" id="review-stars">
                             <label className="form-label">Stars</label>
                             <select id="stars" className="form-select" value={stars} onChange={ (e) => setStars(e.target.value) }>
                                 <option value="leave a star rating">leave a star rating</option>
-                                <option value="1">one</option>
-                                <option value="2">two</option>
-                                <option value="3">three</option>
-                                <option value="4">four</option>
-                                <option value="5">five</option>
+                                <option value="one">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
                             </select>
                         </div>
                         <div className="mb-3" id="review-text">

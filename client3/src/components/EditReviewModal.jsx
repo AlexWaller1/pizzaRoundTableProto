@@ -23,8 +23,21 @@ export default function EditReviewModal({ review }) {
     updateReview(title, stars, text);
   }
   return (
-    <div classname="mt-5">
-        <h3>Update Review Details</h3>
+    <>
+    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editReviewModal">
+        <div className="d-flex align-items-center">
+            <div>Edit Review</div>
+            <div className="button-image-div"></div>
+        </div>
+    </button>
+    <div className="modal fade" id="editReviewModal" aria-aria-labelledby="editReviewLabel" aria-hidden="true">
+        <div className="modal-dialog">
+            <div className="modal-content">
+            <div className="modal-header">
+        <h1 className="modal-title fs-5" id="editReviewModalLabel">Edit Review</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div classname="modal-body">
         <form onSubmit={ onSubmit }>
             <div className="mb-3" id="review-title">
                 <label className="form-label">Title</label>
@@ -47,6 +60,12 @@ export default function EditReviewModal({ review }) {
             </div>
             <button className="btn btn-primary">Submit</button>
         </form>
+       </div>
+      </div>
+     </div>
     </div>
+       
+    </>
+   
   )
 }
