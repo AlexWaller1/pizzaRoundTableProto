@@ -6,7 +6,7 @@ import { UPDATE_REVIEW } from '../mutations/reviewMutations';
 export default function EditReviewModal({ review }) {
   
   const [title, setTitle] = useState(review.title);
-  const [stars, setStars] = useState(review.stars);
+  const [stars, setStars] = useState("");
   const [text, setText] = useState(review.text);
 
   const [updateReview] = useMutation(UPDATE_REVIEW, {
@@ -23,21 +23,8 @@ export default function EditReviewModal({ review }) {
     updateReview(title, stars, text);
   }
   return (
-    <>
-    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editReviewModal">
-        <div className="d-flex align-items-center">
-            <div>Edit Review</div>
-            <div className="button-image-div"></div>
-        </div>
-    </button>
-    <div className="modal fade" id="editReviewModal" aria-aria-labelledby="editReviewLabel" aria-hidden="true">
-        <div className="modal-dialog">
-            <div className="modal-content">
-            <div className="modal-header">
-        <h1 className="modal-title fs-5" id="editReviewModalLabel">Edit Review</h1>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-       </div>
-       <div classname="modal-body">
+    <div classname="mt-5">
+        <h3>Update Review Details</h3>
         <form onSubmit={ onSubmit }>
             <div className="mb-3" id="review-title">
                 <label className="form-label">Title</label>
@@ -47,25 +34,19 @@ export default function EditReviewModal({ review }) {
                 <label className="form-label">Stars</label>
                 <select id="status" className="form-select" value={stars} onChange={(e) => setStars(e.target.value)}>
                     <option value="leave a star rating">leave a star rating</option>
-                    <option value="1">one</option>
-                    <option value="2">two</option>
-                    <option value="3">three</option>
-                    <option value="4">four</option>
-                    <option value="5">five</option>
+                    <option value="one">1</option>
+                    <option value="two">2</option>
+                    <option value="three">3</option>
+                    <option value="four">4</option>
+                    <option value="five">5</option>
                 </select>
             </div>
             <div className="mb-3" id="review-text">
                 <label className="form-label">Review Text</label>
                 <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
             </div>
-            <button className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
-       </div>
-      </div>
-     </div>
     </div>
-       
-    </>
-   
   )
 }
