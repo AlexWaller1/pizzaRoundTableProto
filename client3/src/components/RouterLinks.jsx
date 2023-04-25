@@ -10,6 +10,7 @@ import AppetizerShowPage from './AppetizerShowPage';
 import BeverageShowPage from './BeverageShowPage';
 import DessertShowPage from './DessertShowPage';
 import Reviews from './Reviews';
+import ReviewShowPage from './ReviewShowPage';
 
 export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
 
@@ -24,6 +25,7 @@ export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
         <Route path="/desserts" element={<Desserts/>}/>
         <Route path="/desserts/:id" element={<DessertShowPage cart={ cart } addCartItem={ addCartItem } deleteCartItem={ deleteCartItem } />} />
         <Route path="/reviews" element={<Reviews/>}/>
+        <Route path="/reviews/:id" element={<ReviewShowPage/>} />
         <Route path="/cart" element={<Carts deleteCartItem={ deleteCartItem }/>} />
     </Routes>
   )

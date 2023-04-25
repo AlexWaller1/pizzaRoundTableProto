@@ -23,30 +23,51 @@ export default function EditReviewModal({ review }) {
     updateReview(title, stars, text);
   }
   return (
-    <div classname="mt-5">
-        <h3>Update Review Details</h3>
-        <form onSubmit={ onSubmit }>
-            <div className="mb-3" id="review-title">
-                <label className="form-label">Title</label>
-                <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+
+    <>
+    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editReviewModal">
+      <div className="d-flex align-items-center">
+        <div>Update Review</div>
+        <div><img src="" alt="update-review-image" /></div>
+      </div>
+    </button>
+    <div className="modal fade" id="editReviewModal" aria-labelledby="editReviewLabel" aria-hidden="true">
+        <div className="modal-dialog">
+            <div className="modal-content">
+                <div className="modal-header">
+                  <h1 className="modal-title fs-5" id="editReviewModalLabel">Update Review</h1>
+                  <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div classname="modal-body">
+                    <form onSubmit={ onSubmit }>
+                        <div className="mb-3" id="review-title">
+                            <label className="form-label">Title</label>
+                            <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+                        </div>
+                        <div className="mb-3" id="review-stars">
+                            <label className="form-label">Stars</label>
+                            <select id="status" className="form-select" value={stars} onChange={(e) => setStars(e.target.value)}>
+                                <option value="leave a star rating">leave a star rating</option>
+                                <option value="one">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                            </select>
+                        </div>
+                        <div className="mb-3" id="review-text">
+                            <label className="form-label">Review Text</label>
+                            <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
+                        </div>
+                        <button type="submit" className="btn btn-primary">Submit</button>
+                    </form>
+                </div> 
             </div>
-            <div className="mb-3" id="review-stars">
-                <label className="form-label">Stars</label>
-                <select id="status" className="form-select" value={stars} onChange={(e) => setStars(e.target.value)}>
-                    <option value="leave a star rating">leave a star rating</option>
-                    <option value="one">1</option>
-                    <option value="two">2</option>
-                    <option value="three">3</option>
-                    <option value="four">4</option>
-                    <option value="five">5</option>
-                </select>
-            </div>
-            <div className="mb-3" id="review-text">
-                <label className="form-label">Review Text</label>
-                <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
+    
+     
+    </>
+    
   )
 }
