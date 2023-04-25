@@ -23,6 +23,30 @@ export default function EditReviewModal({ review }) {
     updateReview(title, stars, text);
   }
   return (
-    <div>EditReviewModal</div>
+    <div classname="mt-5">
+        <h3>Update Review Details</h3>
+        <form onSubmit={ onSubmit }>
+            <div className="mb-3" id="review-title">
+                <label className="form-label">Title</label>
+                <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+            </div>
+            <div className="mb-3" id="review-stars">
+                <label className="form-label">Stars</label>
+                <select id="status" className="form-select" value={stars} onChange={(e) => setStars(e.target.value)}>
+                    <option value="leave a star rating">leave a star rating</option>
+                    <option value="1">one</option>
+                    <option value="2">two</option>
+                    <option value="3">three</option>
+                    <option value="4">four</option>
+                    <option value="5">five</option>
+                </select>
+            </div>
+            <div className="mb-3" id="review-text">
+                <label className="form-label">Review Text</label>
+                <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
+            </div>
+            <button className="btn btn-primary">Submit</button>
+        </form>
+    </div>
   )
 }
