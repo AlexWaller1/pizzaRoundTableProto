@@ -16,16 +16,16 @@ export default function DessertShowPage({ addCartItem }) {
     <>
       {
         !loading && !error && (
-            <div className="mx-auto w-75 card p-5">
-                <button className='btn btn-primary btn-small w-25 d-inline ms-auto mb-20' onClick={() => addCartItem(data.dessert)}>Add to Cart</button>
-                <Link to="/desserts" className="btn btn-light btn-sm w-25 d-inline ms-auto mt-15">
+            <div className="mx-auto w-75 card p-5" id="dessert-show-page-div">
+                <button className='btn btn-dark btn-small w-25 d-inline ms-auto mb-20' id="dessert-add-to-cart-btn" onClick={() => addCartItem(data.dessert)}>Add to Cart</button>
+                <Link to="/desserts" className="btn btn-light btn-sm w-25 d-inline ms-auto mt-15" id="desserts-back-btn">
                     Back
                 </Link>
-                <div>
-                    <div>
-                        <img src='234yrngje35r3r43445' alt="dessert image" />
+                <div id="dessert-image-and-info-div">
+                    <div id="dessert-image-div">
+                        <img src='234yrngje35r3r43445' alt="dessert image" id="dessert-image" />
                     </div>
-                    <div>
+                    <div id="dessert-additional-info-div">
                         <h1>{ data.dessert.name }</h1>
                         <h3>{ data.dessert.description }</h3>
                         <h2>{ data.dessert.price }</h2>

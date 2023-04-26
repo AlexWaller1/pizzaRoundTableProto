@@ -18,9 +18,9 @@ export default function DeletePizzaBtn({ pizzaId }) {
       // without users having to refresh page
     })
   return (
-    <div className="d-flex mt-5 ms-auto">
+    <div className="d-flex mt-5 ms-auto" id="delete-pizza-btn-div">
         {/* d is display, mt is margin-top, ms is margin-left, me is margin-right */}
-        <button className="btn btn-danger m-2" onClick={deletePizza}>
+        <button className="btn btn-danger m-2" id="delete-pizza-btn" onClick={deletePizza}>
             <FaTrash className="icon" /> Delete Pizza
         </button>
     </div>

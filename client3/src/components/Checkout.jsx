@@ -32,7 +32,7 @@ export default function Checkout() {
         { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
-            <button className="btn btn-dark" href="/" onClick={() => clearCart()}>Complete Checkout</button>
+            <button className="btn btn-dark" id="complete-checkout-btn" href="/" onClick={() => clearCart()}>Complete Checkout</button>
         </>}
        
     </div>

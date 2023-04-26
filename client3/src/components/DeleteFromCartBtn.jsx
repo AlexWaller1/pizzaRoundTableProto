@@ -9,8 +9,8 @@ export default function DeleteFromCartBtn({ cartId }) {
     refetchQueries: [{ query: GET_CARTS }]
   })
   return (
-    <div className="d-flex mt-5 ms-auto">
-        <button className="btn btn-dark m-2" onClick={deleteFromCart}>
+    <div className="d-flex mt-5 ms-auto" id="delete-from-cart-btn-div">
+        <button className="btn btn-dark m-2" id="delete-from-cart-btn" onClick={deleteFromCart}>
            Delete From Cart
         </button>
     </div>

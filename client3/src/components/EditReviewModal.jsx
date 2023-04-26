@@ -25,20 +25,20 @@ export default function EditReviewModal({ review }) {
   return (
 
     <>
-    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editReviewModal">
+    <button type="button" className="btn btn-dark" id="update-image-div" data-bs-toggle="modal" data-bs-target="#editReviewModal">
       <div className="d-flex align-items-center">
-        <div>Update Review</div>
-        <div><img src="" alt="img" /></div>
+        <div id="button-text-div">Update Review</div>
+        <div id="button-image-div"><img src="" alt="img" /></div>
       </div>
     </button>
     <div className="modal fade" id="editReviewModal" aria-labelledby="editReviewLabel" aria-hidden="true">
         <div className="modal-dialog">
-            <div className="modal-content">
-                <div className="modal-header">
+            <div className="modal-content" id="modal-content">
+                <div className="modal-header" id="modal-header">
                   <h1 className="modal-title fs-5" id="editReviewModalLabel">Update Review</h1>
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div classname="modal-body">
+                <div classname="modal-body" id="modal-body">
                     <form onSubmit={ onSubmit }>
                         <div className="mb-3" id="review-title">
                             <label className="form-label">Title</label>
@@ -59,7 +59,7 @@ export default function EditReviewModal({ review }) {
                             <label className="form-label">Review Text</label>
                             <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-dark" id="edit-review-submit-btn">Submit</button>
                     </form>
                 </div> 
             </div>
