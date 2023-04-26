@@ -1,7 +1,7 @@
 
 export default function DessertCard({ dessert }) {
   return (
-    <div className="col-md-4">
+    <div className="col-md-6">
         <div className="card mb-3">
             <div className="card-body">
                 <div className="d-flex justify-content-between align-content-center">

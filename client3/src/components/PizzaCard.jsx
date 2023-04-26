@@ -1,6 +1,6 @@
 export default function PizzaCard({ pizza }) {
   return (
-    <div className="col-md-4">
+    <div className="col-md-6">
       {/* column medium with that takes up third of screen (bootstrap sees screen twelfths, so 12 / 4 === 3) */}
         <div className="card mb-3">
           { /* card bootstrap class with a margin-bottom of 3 */}
