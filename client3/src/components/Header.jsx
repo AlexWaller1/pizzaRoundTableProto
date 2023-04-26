@@ -5,7 +5,7 @@ export default function Header() {
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="d-flex">
-                        <div>Pizza Roundtable</div>
+                        <h2>Pizza Roundtable</h2>
                     </div>
                 </a>
             </div>

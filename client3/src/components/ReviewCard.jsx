@@ -9,7 +9,6 @@ export default function ReviewCard({ review }) {
                     <a className="btn btn-light" href={`/reviews/${review.id}`}>View</a>
                     <h3 className="review-title">{ review.title }</h3>
                     <img src={review.stars} alt="review stars" />
-                    <h6 className="review-text">{ review.text }</h6>
                 </div>
             </div>
         </div>

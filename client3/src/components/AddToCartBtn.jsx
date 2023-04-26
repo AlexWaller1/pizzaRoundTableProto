@@ -16,7 +16,7 @@ export default function AddToCartBtn({ item }) {
     }
   })
   return (
-    <button className='btn btn-dark' onClick={() => addToCart(item.id, item.name, item.description, item.image, item.price) }>
+    <button id="add-to-cart-btn" className='btn btn-dark' onClick={() => addToCart(item.id, item.name, item.description, item.image, item.price) }>
         Add To Cart
     </button>
   )
