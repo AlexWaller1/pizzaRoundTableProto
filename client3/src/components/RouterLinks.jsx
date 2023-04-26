@@ -11,6 +11,7 @@ import BeverageShowPage from './BeverageShowPage';
 import DessertShowPage from './DessertShowPage';
 import Reviews from './Reviews';
 import ReviewShowPage from './ReviewShowPage';
+import Checkout from './Checkout';
 
 export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
 
@@ -27,6 +28,7 @@ export default function RouterLinks({ cart, addCartItem, deleteCartItem }) {
         <Route path="/reviews" element={<Reviews/>}/>
         <Route path="/reviews/:id" element={<ReviewShowPage/>} />
         <Route path="/cart" element={<Carts deleteCartItem={ deleteCartItem }/>} />
+        <Route path="/checkout" element={<Checkout/>} />
     </Routes>
   )
 }
