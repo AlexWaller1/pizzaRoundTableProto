@@ -34,8 +34,9 @@ const DELETE_CART = gql`
 `;
 
 const DELETE_CARTS = gql`
-  mutation DeleteCarts() {
-    deleteCarts() {
+  mutation DeleteCarts {
+    deleteCarts {
+      id
     }
   }
 `;

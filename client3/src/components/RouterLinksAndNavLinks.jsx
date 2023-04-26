@@ -12,13 +12,14 @@ export default function RouterLinksAndNavLinks() {
     const [description, setDescription] = useState("");
     const [image, setImage] = useState("");
     const [price, setPrice] = useState("");
+    let [changer, setChanger] = useState(false);
 
     useEffect(() => {
       if (itemId, name, description, image, price) {
         addToCart(itemId, name, description, image, price);
         console.log("item added to cart!");
       }
-    }, [price]);
+    }, [changer]);
     
     let addCartItem = (item) => {
       console.log("clicked!!!");
@@ -27,6 +28,8 @@ export default function RouterLinksAndNavLinks() {
       setDescription(item.description);
       setImage(item.image);
       setPrice(item.price);
+      changer = !changer;
+      setChanger(changer);
     }
 
         

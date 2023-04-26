@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GET_CARTS } from '../queries/cartQueries';
 import { DELETE_CARTS } from '../mutations/cartMutations';
 import { useQuery, useMutation } from '@apollo/client';
 
 export default function Checkout() {
-  let id;
-  let totalPrice = 0;
+  const [thankYou, setThankYou] = useState(false);
+  
   let price = 0;
+  let totalPrice = 0;
   const { loading, error, data } = useQuery(GET_CARTS);
   data.carts.map(cart => {
     price = parseFloat(cart.price);
@@ -18,8 +19,9 @@ export default function Checkout() {
     refetchQueries: [{ query: GET_CARTS }]
   })
 
-  let clearCart = (cart) => {
-    cart.map(cart => deleteFromCart(cart.id));
+  let clearCart = () => {
+    setThankYou(true);
+    deleteFromCart();
   }
 
   
@@ -27,8 +29,12 @@ export default function Checkout() {
   if (error) return <h3>Something Went Wrong</h3>
   return (
     <div>
-        <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
-        <button className="btn btn-dark" href="/" onClick={() => clearCart(data.cart)}>Complete Checkout</button>
+        { thankYou && <h2>Thank You For Your Order!</h2>}
+        { !thankYou && <>
+            <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
+            <button className="btn btn-dark" href="/" onClick={() => clearCart()}>Complete Checkout</button>
+        </>}
+       
     </div>
   )
 }
