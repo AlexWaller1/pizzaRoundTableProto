@@ -28,7 +28,7 @@ export default function EditReviewModal({ review }) {
     <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editReviewModal">
       <div className="d-flex align-items-center">
         <div>Update Review</div>
-        <div><img src="" alt="update-review-image" /></div>
+        <div><img src="" alt="img" /></div>
       </div>
     </button>
     <div className="modal fade" id="editReviewModal" aria-labelledby="editReviewLabel" aria-hidden="true">

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Pizza from "./pages/Pizza";
 import RouterLinksAndNavLinks from "./components/RouterLinksAndNavLinks";
+import Footer from "./components/Footer";
 
 // cache is a storage layer where we can store data in order to allow
 // for faster data retrieval and more ease on the server
@@ -45,6 +46,7 @@ function App() {
           <div className="container">
             <Header />
             <RouterLinksAndNavLinks />
+            <Footer />
           </div>
         </Router>
       </ApolloProvider>

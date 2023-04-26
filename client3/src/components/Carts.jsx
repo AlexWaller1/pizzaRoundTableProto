@@ -28,7 +28,7 @@ export default function Carts({ deleteCartItem }) {
         </div>
       ) : <div>No Cart Items</div>}
       <div className="total-price-div">
-        <h4>Total Price: { totalPrice.toFixed(2) } </h4>
+        <h4>Total Price: {"$" + totalPrice.toFixed(2) } </h4>
       </div>
     </>
   )
