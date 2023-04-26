@@ -325,6 +325,12 @@ const mutation = new GraphQLObjectType({
         return cart.save();
       }
     },
+    deleteCarts: {
+      type: CartType,
+      resolve(parent, args) {
+        return Cart.deleteMany({});
+      }
+    },
     deleteCart: {
       type: CartType,
       args: {

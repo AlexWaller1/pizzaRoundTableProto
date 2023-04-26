@@ -33,5 +33,13 @@ const DELETE_CART = gql`
   }
 `;
 
+const DELETE_CARTS = gql`
+  mutation DeleteCarts() {
+    deleteCarts() {
+    }
+  }
+`;
+
 export { ADD_CART };
 export { DELETE_CART };
+export { DELETE_CARTS };
