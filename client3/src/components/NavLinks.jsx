@@ -9,7 +9,7 @@ export default function NavLinks({ cart }) {
   if (loading) return <h3>Loading Cart Data</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
-    <ul className="nav-links-list">
+    <ul id="nav-links-list" className='d-flex justify-content-between'>
         <h4>
             <Link to="/">Home</Link>
         </h4>
