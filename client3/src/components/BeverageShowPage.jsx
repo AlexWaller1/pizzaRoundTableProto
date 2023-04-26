@@ -18,15 +18,15 @@ export default function BeverageShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5">
-                <button className="btn btn-primary btn-small w-25 d-inline ms-auto mb-20" onClick={() => addCartItem(data.beverage)}>Add to Cart</button>
-                <Link to="/beverages" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+                <button className="btn btn-primary btn-small w-25 d-inline ms-auto mb-20" id="beverage-add-to-cart-btn" onClick={() => addCartItem(data.beverage)}>Add to Cart</button>
+                <Link to="/beverages" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="beverage-back-btn">
                     Back
                 </Link>
                 <div>
-                    <div>
-                        <img src={ data.beverage.image } alt="beverage image" />
+                    <div id="beverage-show-page-image-div">
+                        <img src={ data.beverage.image } alt="beverage image" id="beverage-image" />
                     </div>
-                    <div>
+                    <div id="beverage-show-page-additional-info-div">
                         <h1>{ data.beverage.name }</h1>
                         <h3>{ data.beverage.description }</h3>
                         <h2>{ data.beverage.price }</h2>

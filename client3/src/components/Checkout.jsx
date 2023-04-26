@@ -29,7 +29,7 @@ export default function Checkout() {
   if (error) return <h3>Something Went Wrong</h3>
   return (
     <div>
-        { thankYou && <h2>Thank You For Your Order!</h2>}
+        { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
             <button className="btn btn-dark" href="/" onClick={() => clearCart()}>Complete Checkout</button>

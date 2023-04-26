@@ -22,7 +22,7 @@ export default function Carts({ deleteCartItem }) {
   return (
     <>
       { data.carts.length > 0 ? (
-        <div className="row mt-3">
+        <div className="row mt-3" id="all-cart-items-page">
           {data.carts.map(cart => (
             <CartCard key={ cart.id } cart={ cart } deleteCartItem={ deleteCartItem }/>
           ))}
@@ -30,7 +30,7 @@ export default function Carts({ deleteCartItem }) {
       ) : <div>No Cart Items</div>}
       <div id="total-price-div" className="d-flex justify-content-between">
         <h4>Total Price: {"$" + totalPrice.toFixed(2) } </h4>
-        <Link className="btn btn-dark" to="/checkout">Go To Checkout</Link>
+        <Link className="btn btn-dark" to="/checkout" id="checkout-btn">Go To Checkout</Link>
       </div>
     </>
   )
