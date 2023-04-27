@@ -11,3 +11,15 @@
 #all-cart-items-page {
     padding: 20px;
 }
+
+#cart-price {
+    padding-left: 15px;
+}
+
+.cart-title {
+    padding-left: 15px;
+}
+
+#cart-image {
+    padding-left: 15px;
+}
