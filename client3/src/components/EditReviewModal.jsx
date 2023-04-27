@@ -27,7 +27,7 @@ export default function EditReviewModal({ review }) {
     <>
     <button type="button" className="btn btn-dark" id="update-image-div" data-bs-toggle="modal" data-bs-target="#editReviewModal">
       <div className="d-flex align-items-center">
-        <div id="button-text-div">Update Review</div>
+        <div id="button-text-div"><h5>Update Review</h5></div>
         <div id="button-image-div"><img src="" alt="img" /></div>
       </div>
     </button>

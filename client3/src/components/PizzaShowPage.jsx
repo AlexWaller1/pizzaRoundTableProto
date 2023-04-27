@@ -29,9 +29,9 @@ export default function PizzaShowPage({ addCartItem }) {
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">
-                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}><h5>Add To Cart</h5></button>
+                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
                   <Link to="/pizzas" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="pizza-back-btn">
-                      <h5>Back</h5>
+                      <h5 className="back-btn-text">Back</h5>
                   </Link>
                 </div>
             </div>

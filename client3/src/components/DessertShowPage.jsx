@@ -30,9 +30,9 @@ export default function DessertShowPage({ addCartItem }) {
                     </div>
                 </div>
                 <div className="d-flex" id="dessert-show-page-btns-div">
-                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto mb-20' id="dessert-add-to-cart-btn" onClick={() => addCartItem(data.dessert)}><h5>Add to Cart</h5></button>
+                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto mb-20' id="dessert-add-to-cart-btn" onClick={() => addCartItem(data.dessert)}><h5 className="add-to-cart-btn-text">Add to Cart</h5></button>
                   <Link to="/desserts" className="btn btn-dark btn-sm w-25 d-inline ms-auto mt-15" id="desserts-back-btn">
-                     <h5>Back</h5> 
+                     <h5 className="back-btn-text">Back</h5> 
                   </Link>
                 </div>
             </div>
