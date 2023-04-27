@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from "@apollo/client";
 import { GET_APPETIZERS } from '../queries/appetizerQueries';
 import AppetizerCard from './AppetizerCard';
+import "./Appetizers.css";
 
 
 export default function Appetizers() {

@@ -1,0 +1,8 @@
+.card-body {
+    background-color: rgb(129, 41, 41);
+}
+
+.card {
+    --bs-border-radius: 0.175rem !important;
+    --bs-border-width: 2px !important;
+}

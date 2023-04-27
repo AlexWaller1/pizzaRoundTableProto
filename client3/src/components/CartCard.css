@@ -1,0 +1,13 @@
+ #cart-card-div.card.mb-3.w-70 {
+    background-color: rgb(129, 41, 41) !important;
+}
+
+.card {
+    --bs-border-radius: 0.175rem !important;
+    --bs-border-width: 2px !important;
+    --bs-card-border-color: rgb(197, 196, 196);
+}
+
+#all-cart-items-page {
+    padding: 20px;
+}

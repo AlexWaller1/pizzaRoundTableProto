@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_REVIEWS } from '../queries/reviewQueries';
 import ReviewCard from './ReviewCard';
 import AddReviewModal from './AddReviewModal';
+import "./Reviews.css"
 
 export default function Reviews() {
   const { loading, error, data } = useQuery(GET_REVIEWS);

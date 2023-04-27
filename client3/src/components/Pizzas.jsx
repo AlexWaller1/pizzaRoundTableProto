@@ -2,6 +2,7 @@ import Spinner from "./Spinner";
 import { useQuery } from "@apollo/client";
 import { GET_PIZZAS } from "../queries/pizzaQueries";
 import PizzaCard from "./PizzaCard";
+import "./Pizzas.css";
 
 
 export default function Pizzas() {
