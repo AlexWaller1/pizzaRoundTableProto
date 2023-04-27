@@ -1,4 +1,22 @@
 #new-review-btn {
     margin-left: 20px;
-    padding: 10px;
+    padding-top: 10px;
+}
+
+.modal-header {
+    
+    background-color: rgb(172, 41, 41);
+}
+
+.modal-body {
+    background-color: rgb(37, 36, 36);
+}
+
+.btn-close {
+    --bs-btn-close-opacity: 1;
+}
+
+#new-review-modal-submit-btn {
+    background-color: rgb(172, 41, 41) !important;
+    border-color: rgb(172, 41, 41) !important;
 }

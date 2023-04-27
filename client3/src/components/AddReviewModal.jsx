@@ -51,16 +51,16 @@ export default function AddReviewModal() {
               <div className="modal-content">
                 <div className="modal-header">
                     <h1 className="modal-title fs-5" id="addReviewModalLabel">New Review</h1>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" className="btn-close" id="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
                     <form onSubmit={onSubmit}>
                         <div className="mb-3" id="review-title">
-                            <label className="form-label">Title</label>
+                            <label className="form-label"><h5>Title</h5></label>
                             <input type="text" className="form-control" id="name" value={title} onChange={ (e) => setTitle(e.target.value) } />
                         </div>
                         <div className="mb-3" id="review-stars">
-                            <label className="form-label">Stars</label>
+                            <label className="form-label"><h5>Stars</h5></label>
                             <select id="stars" className="form-select" value={stars} onChange={ (e) => setStars(e.target.value) }>
                                 <option value="leave a star rating">leave a star rating</option>
                                 <option value="one">1</option>
@@ -71,10 +71,10 @@ export default function AddReviewModal() {
                             </select>
                         </div>
                         <div className="mb-3" id="review-text">
-                            <label className="form-label">Review Text</label>
+                            <label className="form-label"><h5>Review Text</h5></label>
                             <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value) }></textarea>
                         </div>
-                        <button type="submit" className="btn btn-dark" data-bs-dismiss="modal">Submit</button>
+                        <button type="submit" className="btn btn-danger" id="new-review-modal-submit-btn" data-bs-dismiss="modal">Submit</button>
                     </form>
                 </div>
               </div>
