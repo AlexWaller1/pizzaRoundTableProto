@@ -1,8 +1,9 @@
 import React from 'react'
+import "./TopFooter.css";
 
 export default function TopFooter() {
   return (
-    <div className="d-flex justify-content-between">
+    <div className="d-flex justify-content-around" id="top-footer-div">
         <div className="d-block">
             <h5>Address:</h5>
             <p>3744 Dachshund Path</p>

@@ -1,0 +1,16 @@
+#nav-links-list {
+    background-color: rgb(37, 36, 36);
+    color: rgb(240, 239, 239) !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#nav-links-list #pizza-roundtable-nav-link a {
+    color: rgb(240, 239, 239) !important;
+    text-decoration: none;
+}
+
+ul {
+    padding-right: 2rem;
+    padding-left: 2rem;
+}

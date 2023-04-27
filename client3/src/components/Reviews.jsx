@@ -12,7 +12,7 @@ export default function Reviews() {
     <>
       <AddReviewModal />
       {
-        data.reviews.length > 0 ? <div className="row mt-3">
+        data.reviews.length > 0 ? <div className="row mt-3" id="all-reviews-page">
             {
                 data.reviews.map(review => (
                     <ReviewCard key={ review.id } review={ review } />

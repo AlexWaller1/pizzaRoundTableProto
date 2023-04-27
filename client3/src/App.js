@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound";
 import Pizza from "./pages/Pizza";
 import RouterLinksAndNavLinks from "./components/RouterLinksAndNavLinks";
 import Footer from "./components/Footer";
+import "./App.css";
 
 // cache is a storage layer where we can store data in order to allow
 // for faster data retrieval and more ease on the server

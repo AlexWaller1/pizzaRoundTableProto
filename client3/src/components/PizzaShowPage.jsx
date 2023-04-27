@@ -16,16 +16,16 @@ export default function PizzaShowPage({ addCartItem }) {
     <>
       {
         !loading && !error && (
-            <div className='mx-auto w-75 card p-5'>
-                <button className="btn btn-primary btn-small w-25 d-inline ms-auto" onClick={() => addCartItem(data.pizza)}>Add To Cart</button>
-                <Link to="/pizzas" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+            <div className='mx-auto w-75 card p-5' id="pizza-show-page">
+                <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}>Add To Cart</button>
+                <Link to="/pizzas" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="pizza-back-btn">
                     Back
                 </Link>
-                <div>
-                    <div>
-                        <img src={ data.pizza.image } alt="pizza" />
+                <div id="pizza-image-and-info-div">
+                    <div id="pizza-image-div">
+                        <img src={ data.pizza.image } alt="pizza" id="pizza-image" />
                     </div>
-                    <div>
+                    <div id="pizza-additional-info-div"> 
                       <h1>{ data.pizza.name }</h1>
                       <h3>{ data.pizza.description }</h3>
                       <h2>{ data.pizza.price }</h2>

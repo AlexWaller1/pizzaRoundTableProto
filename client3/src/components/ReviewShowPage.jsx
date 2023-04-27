@@ -15,11 +15,11 @@ export default function ReviewShowPage({ review }) {
     <>
       {
         !loading && !error && (
-            <div className="mx-auto w-75 card p-5">
-                <Link to="/reviews" className="btn btn-light btn-sm w-25 d-inline ms-auto">
+            <div className="mx-auto w-75 card p-5" id="review-show-page">
+                <Link to="/reviews" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="review-back-btn" >
                     Back
                 </Link>
-                <div>
+                <div id="review-info">
                     <h1>{ data.review.title }</h1>
                     <h2>{ data.review.stars }</h2>
                     <h3>{ data.review.text }</h3>

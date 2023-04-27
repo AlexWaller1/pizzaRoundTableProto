@@ -4,7 +4,7 @@ export default function Header() {
         <nav className="navbar bg-light mb-4 p-0">
             <div className="container">
                 <a className="navbar-brand" href="/">
-                    <div className="d-flex">
+                    <div className="d-flex" id="pizza-roundtable-header">
                         <h2>Pizza Roundtable</h2>
                     </div>
                 </a>
