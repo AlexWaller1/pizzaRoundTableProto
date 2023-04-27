@@ -18,14 +18,14 @@ export default function AppetizerShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5" id="appetizer-show-page-div">
-                <div id="appetizer-info-div">
-                    <div id="appetizer-image-div">
-                        <img src={ data.appetizer.image } alt="appetizer image" />
-                    </div>
+                <div className="d-flex justify-content-between" id="appetizer-info-div">
                     <div id="appetizer-additional-info-div">
                         <h1>{ data.appetizer.name }</h1>
                         <h3>{ data.appetizer.description }</h3>
                         <h2>{ data.appetizer.price }</h2>
+                    </div>
+                    <div id="appetizer-image-div">
+                        <img src={ data.appetizer.image } alt="appetizer image" />
                     </div>
                 </div>
                 <div className="d-flex" id="appetizer-show-page-div">

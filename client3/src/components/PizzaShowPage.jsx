@@ -18,14 +18,14 @@ export default function PizzaShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className='mx-auto w-75 card p-5' id="pizza-show-page-div">
-                <div id="pizza-image-and-info-div">
-                    <div id="pizza-image-div">
-                        <img src={ data.pizza.image } alt="pizza" id="pizza-image" />
-                    </div>
+                <div className="d-flex justify-content-between" id="pizza-image-and-info-div">
                     <div id="pizza-additional-info-div"> 
                       <h1>{ data.pizza.name }</h1>
                       <h3>{ data.pizza.description }</h3>
                       <h2>{ data.pizza.price }</h2>
+                    </div>
+                    <div id="pizza-image-div">
+                        <img src={ data.pizza.image } alt="pizza" id="pizza-image" />
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">

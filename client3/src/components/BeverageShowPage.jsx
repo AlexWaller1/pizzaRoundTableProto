@@ -19,14 +19,14 @@ export default function BeverageShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5" id="beverage-show-page-div">
-                <div>
-                    <div id="beverage-show-page-image-div">
-                        <img src={ data.beverage.image } alt="beverage image" id="beverage-image" />
-                    </div>
+                <div className="d-flex justify-content-between">
                     <div id="beverage-show-page-additional-info-div">
                         <h1>{ data.beverage.name }</h1>
                         <h3>{ data.beverage.description }</h3>
                         <h2>{ data.beverage.price }</h2>
+                    </div>
+                    <div id="beverage-show-page-image-div">
+                        <img src={ data.beverage.image } alt="beverage image" id="beverage-image" />
                     </div>
                 </div>
                 <div className="d-flex" id="beverage-show-page-btns-div">
