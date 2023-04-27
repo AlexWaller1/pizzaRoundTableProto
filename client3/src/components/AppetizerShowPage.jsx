@@ -18,10 +18,6 @@ export default function AppetizerShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5" id="appetizer-show-page-div">
-                <button className='btn btn-dark btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}>Add To Cart</button>
-                <Link to="/appetizers" className='btn btn-dark btn-sm w-25 d-inline ms-auto' id="appetizer-show-page-back-btn">
-                    Back
-                </Link>
                 <div id="appetizer-info-div">
                     <div id="appetizer-image-div">
                         <img src={ data.appetizer.image } alt="appetizer image" />
@@ -31,6 +27,12 @@ export default function AppetizerShowPage({ addCartItem }) {
                         <h3>{ data.appetizer.description }</h3>
                         <h2>{ data.appetizer.price }</h2>
                     </div>
+                </div>
+                <div className="d-flex" id="appetizer-show-page-div">
+                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
+                  <Link to="/appetizers" className='btn btn-dark btn-sm w-25 d-inline ms-auto' id="appetizer-show-page-back-btn">
+                     <h5 className="back-btn-text">Back</h5> 
+                  </Link>
                 </div>
             </div>
         )

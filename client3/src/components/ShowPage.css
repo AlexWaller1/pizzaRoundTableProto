@@ -13,3 +13,27 @@
 #pizza-show-page-div {
     background-color: rgb(129, 41, 41);
 }
+
+.back-btn-text {
+    margin-top: 5px;
+}
+
+.add-to-cart-btn-text {
+    margin-top: 5px;
+}
+
+#appetizer-show-page-div {
+    padding-right: 250px;
+}
+
+#pizza-show-page-btns-div {
+    padding-right: 250px;
+}
+
+#beverage-show-page-btns-div {
+    padding-right: 250px;
+}
+
+#dessert-show-page-btns-div {
+    padding-right: 250px;
+}
