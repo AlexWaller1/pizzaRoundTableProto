@@ -37,7 +37,7 @@ export default function AddReviewModal() {
       {  
         <>
         { /* Button to have modal appear */}
-          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReviewModal">
+          <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addReviewModal">
             <div className="d-flex align-items-center">
                 <div>New Review</div>
                 <div className="button-image-div"></div>

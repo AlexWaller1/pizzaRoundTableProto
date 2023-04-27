@@ -1,3 +1,5 @@
+import "./ItemCard.css"
+
 export default function PizzaCard({ pizza }) {
   return (
     <div className="col-md-6">

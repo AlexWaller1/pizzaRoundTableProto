@@ -1,3 +1,4 @@
+import "./ItemCard.css";
 
 export default function AppetizerCard({ appetizer }) {
   return (
@@ -6,7 +7,7 @@ export default function AppetizerCard({ appetizer }) {
             <div className="card-body" id="appetizer-card-body">
                <div className="d-flex justify-content-between align-items-center">
                   <h5 className="appetizer-title">{ appetizer.name }</h5>
-                  <a className="btn btn-light" href={`/appetizers/${appetizer.id}`}>View</a>
+                  <a className="btn btn-dark" href={`/appetizers/${appetizer.id}`}>View</a>
                </div>
                <div id="appetizer-image-div">
                  <img src={appetizer.image} alt="appetizer image" className="appetizer-image"/>

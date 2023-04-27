@@ -1,3 +1,4 @@
+import "./ItemCard.css"
 
 export default function DessertCard({ dessert }) {
   return (
