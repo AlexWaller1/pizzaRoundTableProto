@@ -18,10 +18,7 @@ export default function DessertShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5" id="dessert-show-page-div">
-                <button className='btn btn-dark btn-small w-25 d-inline ms-auto mb-20' id="dessert-add-to-cart-btn" onClick={() => addCartItem(data.dessert)}>Add to Cart</button>
-                <Link to="/desserts" className="btn btn-light btn-sm w-25 d-inline ms-auto mt-15" id="desserts-back-btn">
-                    Back
-                </Link>
+                
                 <div id="dessert-image-and-info-div">
                     <div id="dessert-image-div">
                         <img src='234yrngje35r3r43445' alt="dessert image" id="dessert-image" />
@@ -31,6 +28,12 @@ export default function DessertShowPage({ addCartItem }) {
                         <h3>{ data.dessert.description }</h3>
                         <h2>{ data.dessert.price }</h2>
                     </div>
+                </div>
+                <div className="d-flex" id="pizza-show-page-btns-div">
+                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto mb-20' id="dessert-add-to-cart-btn" onClick={() => addCartItem(data.dessert)}><h5>Add to Cart</h5></button>
+                  <Link to="/desserts" className="btn btn-dark btn-sm w-25 d-inline ms-auto mt-15" id="desserts-back-btn">
+                     <h5>Back</h5> 
+                  </Link>
                 </div>
             </div>
         )

@@ -18,7 +18,7 @@ export default function AppetizerShowPage({ addCartItem }) {
       {
         !loading && !error && (
             <div className="mx-auto w-75 card p-5" id="appetizer-show-page-div">
-                <button className='btn btn-primary btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}>Add To Cart</button>
+                <button className='btn btn-dark btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}>Add To Cart</button>
                 <Link to="/appetizers" className='btn btn-dark btn-sm w-25 d-inline ms-auto' id="appetizer-show-page-back-btn">
                     Back
                 </Link>
