@@ -6,3 +6,7 @@
     --bs-border-radius: 0.175rem !important;
     --bs-border-width: 2px !important;
 }
+
+.view-item-btn {
+    margin-top: 5px;
+}
