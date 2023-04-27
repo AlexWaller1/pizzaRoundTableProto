@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { GET_PIZZA } from '../queries/pizzaQueries';
+import "./ShowPage.css";
 
 export default function PizzaShowPage({ addCartItem }) {
   const { id } = useParams();
@@ -16,7 +17,7 @@ export default function PizzaShowPage({ addCartItem }) {
     <>
       {
         !loading && !error && (
-            <div className='mx-auto w-75 card p-5' id="pizza-show-page">
+            <div className='mx-auto w-75 card p-5' id="pizza-show-page-div">
                 <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}>Add To Cart</button>
                 <Link to="/pizzas" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="pizza-back-btn">
                     Back

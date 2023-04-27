@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_DESSERT } from '../queries/dessertQueries';
+import "./ShowPage.css";
 
 export default function DessertShowPage({ addCartItem }) {
   const { id } = useParams();

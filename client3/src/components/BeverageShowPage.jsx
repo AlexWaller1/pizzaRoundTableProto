@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_BEVERAGE } from '../queries/beverageQueries';
 import AddToCartBtn from './AddToCartBtn';
+import "./ShowPage.css";
 
 export default function BeverageShowPage({ addCartItem }) {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export default function BeverageShowPage({ addCartItem }) {
     <>
       {
         !loading && !error && (
-            <div className="mx-auto w-75 card p-5">
+            <div className="mx-auto w-75 card p-5" id="beverage-show-page-div">
                 <button className="btn btn-primary btn-small w-25 d-inline ms-auto mb-20" id="beverage-add-to-cart-btn" onClick={() => addCartItem(data.beverage)}>Add to Cart</button>
                 <Link to="/beverages" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="beverage-back-btn">
                     Back
