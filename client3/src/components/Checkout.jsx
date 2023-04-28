@@ -29,13 +29,12 @@ export default function Checkout() {
   if (loading) return <h3>Loading Checkout Page</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
-    <div className="justify-content-center" id="checkout-div">
+    <div className="mt-5" id="checkout-div">
         { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
             { totalPrice > 0 && <button className="btn btn-dark mt-3" id="complete-checkout-btn" href="/" onClick={() => clearCart()}><h5 id="checkout-btn-text">Complete Checkout</h5></button>}
         </>}
-       
     </div>
   )
 }

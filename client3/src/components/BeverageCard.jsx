@@ -6,13 +6,13 @@ export default function BeverageCard({ beverage }) {
         <div className="card mb-3">
             <div className="card-body" id="beverage-card">
                 <div className="d-flex justify-content-between align-items-center" id="beverage-title-and-btn-div">
-                    <h5 className="beverage-title">{beverage.name}</h5>
+                    <h4 className="beverage-title">{beverage.name}</h4>
                     <a className="btn btn-dark" href={`/beverages/${beverage.id}`} id="beverage-card-btn"><h5 className="view-item-btn">View</h5></a>
                 </div>
                 <div id="beverage-card-image-div">
                   <img src={beverage.img} alt="beverage image" id="beverage-card-image"/>
                 </div>
-                <h6 className="beverage-price">{beverage.price}</h6>
+                <h4 className="beverage-price">{beverage.price}</h4>
             </div>
         </div>
     </div>
