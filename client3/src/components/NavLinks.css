@@ -10,6 +10,10 @@
     text-decoration: none;
 }
 
+#nav-links-list #pizza-roundtable-nav-link a:hover {
+    color: rgb(218, 53, 53) !important;
+}
+
 ul {
     padding-right: 2rem;
     padding-left: 2rem;
