@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { GET_CARTS } from '../queries/cartQueries';
 import { DELETE_CARTS } from '../mutations/cartMutations';
 import { useQuery, useMutation } from '@apollo/client';
+import "./Checkout.css";
 
 export default function Checkout() {
   const [thankYou, setThankYou] = useState(false);
@@ -28,11 +29,11 @@ export default function Checkout() {
   if (loading) return <h3>Loading Checkout Page</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
-    <div>
+    <div className="justify-content-center" id="checkout-div">
         { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
-            <button className="btn btn-dark" id="complete-checkout-btn" href="/" onClick={() => clearCart()}>Complete Checkout</button>
+            { totalPrice > 0 && <button className="btn btn-dark mt-3" id="complete-checkout-btn" href="/" onClick={() => clearCart()}><h5 id="checkout-btn-text">Complete Checkout</h5></button>}
         </>}
        
     </div>
