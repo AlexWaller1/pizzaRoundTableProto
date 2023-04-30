@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function CartBtnIcon() {
   return (
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
 	 width="40px" height="40px" viewBox="0 0 1728 1728">
         <g id="Layer_3">
             <polygon className="st2" fill="#fff" points="440,453 1616.47,453 1461,930 629.23,930 522.85,930 	"/>
