@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_REVIEW } from '../queries/reviewQueries';
 import EditReviewModal from './EditReviewModal';
+import BackBtnArrow from './BackBtnArrow';
 import "./ReviewShowPage.css";
 
 export default function ReviewShowPage({ review }) {
@@ -26,7 +27,10 @@ export default function ReviewShowPage({ review }) {
                 <div className="d-flex mt-3">
                     <EditReviewModal review={data.review} />
                     <Link to="/reviews" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="review-back-btn" >
-                      <h5>Back</h5>
+                      <div className="d-flex">
+                        <BackBtnArrow />
+                        <h5 className="review-card-back-btn">Back</h5>
+                      </div>
                     </Link>
                 </div>
             </div>

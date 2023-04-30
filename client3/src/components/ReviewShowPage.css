@@ -1,3 +1,8 @@
 #review-show-page {
     background-color: rgb(129, 41, 41);
 }
+
+.review-card-back-btn {
+    margin-top: 5px;
+    margin-left: 45px;
+}
