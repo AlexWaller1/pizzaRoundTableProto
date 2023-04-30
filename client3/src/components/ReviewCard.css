@@ -6,3 +6,12 @@
     --bs-border-radius: 0.175rem !important;
     --bs-border-width: 2px !important;
 }
+
+.view-btn-icon {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.view-review-btn-text {
+    margin-top: 7px;
+}
