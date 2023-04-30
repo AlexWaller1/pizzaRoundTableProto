@@ -20,3 +20,11 @@
     background-color: rgb(172, 41, 41) !important;
     border-color: rgb(172, 41, 41) !important;
 }
+
+.new-review-btn-plus-sign {
+    margin-left: 15px;
+}
+
+.new-review-btn-text {
+    margin-top: 5px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
 import { GET_REVIEWS } from '../queries/reviewQueries';
 import { ADD_REVIEW } from '../mutations/reviewMutations';
+
 import "./AddReviewModal.css"
 
 export default function AddReviewModal() {
@@ -40,8 +41,7 @@ export default function AddReviewModal() {
         { /* Button to have modal appear */}
           <button type="button" className="btn btn-dark" id="new-review-btn" data-bs-toggle="modal" data-bs-target="#addReviewModal">
             <div className="d-flex align-items-center">
-                <div><h4>New Review</h4></div>
-                <div className="button-image-div"></div>
+                <div className="d-flex"><h4 className="new-review-btn-text">New Review</h4><h2 className="new-review-btn-plus-sign">+</h2></div>
             </div>
           </button>
           
