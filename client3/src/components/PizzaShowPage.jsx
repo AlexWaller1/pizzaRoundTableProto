@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { GET_PIZZA } from '../queries/pizzaQueries';
 import BackBtnArrow from './BackBtnArrow';
+import CartBtnIcon from './CartBtnIcon';
 import "./ShowPage.css";
 
 export default function PizzaShowPage({ addCartItem }) {
@@ -36,7 +37,12 @@ export default function PizzaShowPage({ addCartItem }) {
                         <h5 className="back-btn-text">Back</h5>
                       </div>
                   </Link>
-                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
+                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}>
+                    <div className="d-flex">
+                      <h5 className="add-to-cart-btn-text">Add To Cart</h5>
+                      <CartBtnIcon />
+                    </div>
+                  </button>
                 </div>
             </div>
         )
