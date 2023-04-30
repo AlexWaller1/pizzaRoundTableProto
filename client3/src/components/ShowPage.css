@@ -16,6 +16,7 @@
 
 .back-btn-text {
     margin-top: 5px;
+    margin-left: 15px;
 }
 
 .add-to-cart-btn-text {
@@ -36,4 +37,9 @@
 
 #dessert-show-page-btns-div {
     padding-right: 250px;
+}
+
+.showPageBackBtn {
+    margin-top: 5px;
+    margin-left: 45px;;
 }

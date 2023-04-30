@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from '@apollo/client';
 import { GET_PIZZA } from '../queries/pizzaQueries';
+import BackBtnArrow from './BackBtnArrow';
 import "./ShowPage.css";
 
 export default function PizzaShowPage({ addCartItem }) {
@@ -29,10 +30,13 @@ export default function PizzaShowPage({ addCartItem }) {
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">
-                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
                   <Link to="/pizzas" className="btn btn-dark btn-sm w-25 d-inline ms-auto" id="pizza-back-btn">
-                      <h5 className="back-btn-text">Back</h5>
+                      <div className='d-flex' id="backBtnDiv">
+                        <BackBtnArrow />
+                        <h5 className="back-btn-text">Back</h5>
+                      </div>
                   </Link>
+                  <button className="btn btn-dark btn-small w-25 d-inline ms-auto" id="pizza-add-to-cart-btn" onClick={() => addCartItem(data.pizza)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
                 </div>
             </div>
         )
