@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GET_CARTS } from '../queries/cartQueries';
 import { useQuery } from "@apollo/client"
 import "./NavLinks.css";
+import CartBtnIcon from './CartBtnIcon';
 
 export default function NavLinks({ cart }) {
   
@@ -30,7 +31,7 @@ export default function NavLinks({ cart }) {
             <Link to="reviews">Reviews</Link>
         </h4>
         <h4 id="pizza-roundtable-nav-link">
-            <Link to="/cart">{`Cart: ${ data.carts.length }`}</Link>
+            <Link to="/cart"><CartBtnIcon/> {`Cart: ${ data.carts.length }`}</Link>
         </h4>
     </ul>
   )

@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_APPETIZER } from '../queries/appetizerQueries';
+import BackBtnArrow from './BackBtnArrow';
+import CartBtnIcon from './CartBtnIcon';
 import "./ShowPage.css"
 
 export default function AppetizerShowPage({ addCartItem }) {
@@ -29,10 +31,18 @@ export default function AppetizerShowPage({ addCartItem }) {
                     </div>
                 </div>
                 <div className="d-flex" id="appetizer-show-page-div">
-                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}><h5 className="add-to-cart-btn-text">Add To Cart</h5></button>
                   <Link to="/appetizers" className='btn btn-dark btn-sm w-25 d-inline ms-auto' id="appetizer-show-page-back-btn">
-                     <h5 className="back-btn-text">Back</h5> 
+                     <div className="d-flex" id="backBtnDiv">
+                       <BackBtnArrow />
+                       <h5 className="back-btn-text">Back</h5>
+                     </div> 
                   </Link>
+                  <button className='btn btn-dark btn-small w-25 d-inline ms-auto' id="appetizer-add-to-cart-btn" onClick={() => addCartItem(data.appetizer)}>
+                    <div className="d-flex">
+                      <h5 className="add-to-cart-btn-text">Add To Cart</h5>
+                      <CartBtnIcon/>
+                    </div>
+                  </button>
                 </div>
             </div>
         )
