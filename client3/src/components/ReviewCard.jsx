@@ -5,6 +5,7 @@ import OneStar from './OneStar';
 import TwoStar from './TwoStar';
 import ThreeStar from './ThreeStar';
 import FourStar from './FourStar';
+import FiveStar from './FiveStar';
 
 export default function ReviewCard({ review }) {
   return (

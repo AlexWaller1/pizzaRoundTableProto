@@ -8,6 +8,7 @@ import OneStar from './OneStar';
 import TwoStar from './TwoStar';
 import ThreeStar from './ThreeStar';
 import FourStar from './FourStar';
+import FiveStar from './FiveStar';
 import "./ReviewShowPage.css";
 
 export default function ReviewShowPage({ review }) {
