@@ -3,6 +3,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { GET_REVIEWS } from '../queries/reviewQueries';
 import { ADD_REVIEW } from '../mutations/reviewMutations';
 import NewEditReviewIcon from './NewEditReviewIcon';
+import ReviewModalIcon from './ReviewModalIcon';
 import "./AddReviewModal.css"
 
 export default function AddReviewModal() {
@@ -54,6 +55,7 @@ export default function AddReviewModal() {
               <div className="modal-content">
                 <div className="modal-header">
                     <h1 className="modal-title fs-5" id="addReviewModalLabel">New Review</h1>
+                    <ReviewModalIcon/>
                     <button type="button" className="btn-close" id="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">

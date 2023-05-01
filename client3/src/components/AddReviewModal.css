@@ -32,3 +32,7 @@
 .add-review-submit-btn-text {
     margin-top: 3px;
 }
+
+#addReviewModalLabel {
+    margin-right: 75px;
+}

@@ -1,4 +1,5 @@
 import "./Header.css"
+import PizzaRoundtableLogo from "./PizzaRoundtableLogo"
 
 export default function Header() {
     // just providing header for application
@@ -7,7 +8,7 @@ export default function Header() {
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="d-flex" id="pizza-roundtable-header">
-                        <h1>Pizza Roundtable</h1>
+                        <PizzaRoundtableLogo/>
                     </div>
                 </a>
             </div>

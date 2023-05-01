@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { GET_REVIEW } from '../queries/reviewQueries';
 import { UPDATE_REVIEW } from '../mutations/reviewMutations';
 import NewEditReviewIcon from './NewEditReviewIcon';
+import ReviewModalIcon from './ReviewModalIcon';
 import "./EditReviewModal.css";
 
 export default function EditReviewModal({ review }) {
@@ -38,16 +39,17 @@ export default function EditReviewModal({ review }) {
             <div className="modal-content" id="modal-content">
                 <div className="modal-header" id="modal-header">
                   <h1 className="modal-title fs-5" id="editReviewModalLabel">Update Review</h1>
+                  <ReviewModalIcon/>
                   <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div classname="modal-body" id="modal-body">
                     <form onSubmit={ onSubmit }>
                         <div className="mb-3" id="review-title">
-                            <label className="form-label">Title</label>
+                            <label className="form-label"><h5>Title:</h5></label>
                             <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                         </div>
                         <div className="mb-3" id="review-stars">
-                            <label className="form-label">Stars</label>
+                            <label className="form-label"><h5>Stars:</h5></label>
                             <select id="status" className="form-select" value={stars} onChange={(e) => setStars(e.target.value)}>
                                 <option value="leave a star rating">leave a star rating</option>
                                 <option value="one">1</option>
@@ -58,10 +60,10 @@ export default function EditReviewModal({ review }) {
                             </select>
                         </div>
                         <div className="mb-3" id="review-text">
-                            <label className="form-label">Review Text</label>
+                            <label className="form-label"><h5>Review Text:</h5></label>
                             <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
                         </div>
-                        <button type="submit" className="btn btn-dark" id="edit-review-submit-btn">{"Submit >>"}</button>
+                        <button type="submit" className="btn btn-dark" id="edit-review-submit-btn"><h5>{"Submit >>"}</h5></button>
                     </form>
                 </div> 
             </div>

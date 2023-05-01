@@ -3,7 +3,7 @@ import React from 'react'
 export default function ReviewModalIcon() {
   return (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 8640 8640">
+	 width="100px" height="100px" viewBox="0 0 8640 8640">
         <g id="Layer_2">
             <g>
                 <ellipse class="st0" fill="#B79639" cx="4364.5" cy="4309.5" rx="4227.5" ry="4076.5"/>
