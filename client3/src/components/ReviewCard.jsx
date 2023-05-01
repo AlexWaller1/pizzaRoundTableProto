@@ -14,7 +14,7 @@ export default function ReviewCard({ review }) {
             <div className="card-body" id="review-card">
                 <div className="d-flex justify-content-between align-items-center" id="review-content">
                     <h3 className="review-title">{ review.title }</h3>
-                    <img src={review.stars} alt="review stars" id="review-stars" />
+                    <div>{ review.stars === "5" ? <FiveStar/> : review.stars === "4" ? <FourStar/> : review.stars === "3" ? <ThreeStar/> : review.stars === "2" ? <TwoStar/> : <OneStar/>}</div>
                     <a className="btn btn-dark" href={`/reviews/${review.id}`}>
                         <div className="d-flex">
                           <h5 className="view-review-btn-text">View</h5>
