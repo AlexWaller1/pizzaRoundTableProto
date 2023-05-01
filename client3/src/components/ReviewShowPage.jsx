@@ -26,7 +26,7 @@ export default function ReviewShowPage({ review }) {
                
                 <div id="review-info">
                     <h1>{ data.review.title }</h1>
-                    <h2>{ data.review.stars }</h2>
+                    <h2>{ data.review.stars === "5" ? <FiveStar/> : data.review.stars === "4" ? <FourStar/> : data.review.stars === "3" ? <ThreeStar/> : data.review.stars === "2" ? <TwoStar/> : <OneStar/>}</h2>
                     <h3>{ data.review.text }</h3>
                 </div>
                 <div className="d-flex mt-3">
