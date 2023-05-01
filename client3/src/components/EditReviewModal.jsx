@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { GET_REVIEW } from '../queries/reviewQueries';
 import { UPDATE_REVIEW } from '../mutations/reviewMutations';
+import NewEditReviewIcon from './NewEditReviewIcon';
 import "./EditReviewModal.css";
 
 export default function EditReviewModal({ review }) {
@@ -29,7 +30,7 @@ export default function EditReviewModal({ review }) {
     <button type="button" className="btn btn-dark" id="update-image-div" data-bs-toggle="modal" data-bs-target="#editReviewModal">
       <div className="d-flex align-items-center">
         <div id="button-text-div"><h5 className="update-review-btn-text">Update Review</h5></div>
-        <div id="button-image-div"><img src="" alt="img" /></div>
+        <div><NewEditReviewIcon/></div>
       </div>
     </button>
     <div className="modal fade" id="editReviewModal" aria-labelledby="editReviewLabel" aria-hidden="true">

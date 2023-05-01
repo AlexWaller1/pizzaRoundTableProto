@@ -4,6 +4,10 @@ import { useQuery } from "@apollo/client";
 import { GET_REVIEW } from '../queries/reviewQueries';
 import EditReviewModal from './EditReviewModal';
 import BackBtnArrow from './BackBtnArrow';
+import OneStar from './OneStar';
+import TwoStar from './TwoStar';
+import ThreeStar from './ThreeStar';
+import FourStar from './FourStar';
 import "./ReviewShowPage.css";
 
 export default function ReviewShowPage({ review }) {

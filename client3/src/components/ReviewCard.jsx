@@ -1,6 +1,10 @@
 import React from 'react';
 import "./ReviewCard.css";
 import ViewBtnIcon from './ViewBtnIcon';
+import OneStar from './OneStar';
+import TwoStar from './TwoStar';
+import ThreeStar from './ThreeStar';
+import FourStar from './FourStar';
 
 export default function ReviewCard({ review }) {
   return (
