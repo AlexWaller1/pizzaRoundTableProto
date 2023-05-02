@@ -1,11 +1,12 @@
 import React from 'react'
 import "./TopFooter.css";
+import FooterAddressIcon from './FooterAddressIcon';
 
 export default function TopFooter() {
   return (
     <div className="d-flex justify-content-around" id="top-footer-div">
         <div className="d-block">
-            <h5>Address:</h5>
+            <div className="d-flex"><FooterAddressIcon/><h5>Address:</h5></div>
             <p>- 3744 Dachshund Path</p>
             <p>- Whitehouse Station, New Jersey</p>
             <p>- 08889</p>
