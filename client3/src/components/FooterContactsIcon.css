@@ -1,3 +1,7 @@
-.footer-contacts-icon .st1 {
+.footer-contacts-icon .st0 {
     fill: #FFFFFF
+}
+
+.footer-contacts-icon {
+    margin-right: 10px;
 }

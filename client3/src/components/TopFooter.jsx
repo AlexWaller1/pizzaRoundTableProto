@@ -7,7 +7,7 @@ export default function TopFooter() {
   return (
     <div className="d-flex justify-content-around" id="top-footer-div">
         <div className="d-block">
-            <div className="d-flex"><FooterAddressIcon/><h5 className="addressfooter-header">Address:</h5></div>
+            <div className="d-inline-flex"><FooterAddressIcon/><h5 className="addressfooter-header">Address:</h5></div>
             <p>- 3744 Dachshund Path</p>
             <p>- Whitehouse Station, New Jersey</p>
             <p>- 08889</p>
