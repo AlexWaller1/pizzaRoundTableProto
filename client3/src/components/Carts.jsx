@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_CARTS } from '../queries/cartQueries';
 import { Link } from "react-router-dom";
 import CartCard from './CartCard';
+import CheckoutBtnIcon from './CheckoutBtnIcon';
 import "./Carts.css"
 
 export default function Carts({ deleteCartItem }) {
@@ -32,7 +33,12 @@ export default function Carts({ deleteCartItem }) {
       <div id="total-price-div" className="d-flex justify-content-between">
         <h4 id="total-price-header">Total Price: {"$" + totalPrice.toFixed(2) } </h4>
         <div id="checkout-btn-div">
-        <Link className="btn btn-dark" to="/checkout" id="checkout-btn"><h5 id="checkout-text">Go To Checkout</h5></Link>
+        <Link className="btn btn-dark" to="/checkout" id="checkout-btn">
+          <div className="d-flex">
+            <CheckoutBtnIcon/>
+            <h5 id="checkout-text">Go To Checkout</h5>
+          </div>
+        </Link>
         </div>
       </div>
     </>
