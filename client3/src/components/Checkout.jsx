@@ -3,6 +3,7 @@ import { GET_CARTS } from '../queries/cartQueries';
 import { DELETE_CARTS } from '../mutations/cartMutations';
 import { useQuery, useMutation } from '@apollo/client';
 import CheckoutBtnIcon from './CheckoutBtnIcon';
+import OrderThankYouIcon from './OrderThankYouIcon';
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -31,7 +32,7 @@ export default function Checkout() {
   if (error) return <h3>Something Went Wrong</h3>
   return (
     <div className="mt-5" id="checkout-div">
-        { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
+        { thankYou && <OrderThankYouIcon/>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
             { totalPrice > 0 && <button className="btn btn-dark mt-3" id="complete-checkout-btn" href="/" onClick={() => clearCart()}>
