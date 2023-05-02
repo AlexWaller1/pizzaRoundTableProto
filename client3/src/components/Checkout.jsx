@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { GET_CARTS } from '../queries/cartQueries';
 import { DELETE_CARTS } from '../mutations/cartMutations';
 import { useQuery, useMutation } from '@apollo/client';
+import CheckoutBtnIcon from './CheckoutBtnIcon';
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -33,7 +34,12 @@ export default function Checkout() {
         { thankYou && <h2 id="thank-you-header">Thank You For Your Order!</h2>}
         { !thankYou && <>
             <h3>{`Total Price: $${totalPrice.toFixed(2)}`}</h3>
-            { totalPrice > 0 && <button className="btn btn-dark mt-3" id="complete-checkout-btn" href="/" onClick={() => clearCart()}><h5 id="checkout-btn-text">Complete Checkout</h5></button>}
+            { totalPrice > 0 && <button className="btn btn-dark mt-3" id="complete-checkout-btn" href="/" onClick={() => clearCart()}>
+                <div className="d-flex">
+                  <CheckoutBtnIcon />
+                  <h4 id="checkout-btn-text">Checkout</h4>
+                </div>
+            </button>}
         </>}
     </div>
   )

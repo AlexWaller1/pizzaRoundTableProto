@@ -36,7 +36,7 @@ export default function Carts({ deleteCartItem }) {
         <Link className="btn btn-dark" to="/checkout" id="checkout-btn">
           <div className="d-flex">
             <CheckoutBtnIcon/>
-            <h5 id="checkout-text">Go To Checkout</h5>
+            <h4 id="checkout-text">Go To Checkout</h4>
           </div>
         </Link>
         </div>
