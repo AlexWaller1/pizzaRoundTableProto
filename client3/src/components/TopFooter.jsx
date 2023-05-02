@@ -2,6 +2,7 @@ import React from 'react'
 import "./TopFooter.css";
 import FooterAddressIcon from './FooterAddressIcon';
 import FooterContactsIcon from './FooterContactsIcon';
+import FooterAffiliatesLogo from './FooterAffiliatesLogo';
 
 export default function TopFooter() {
   return (
@@ -18,7 +19,7 @@ export default function TopFooter() {
             <p>- info@pizzaroundtable.com</p>
         </div>
         <div className="d-block">
-            <h5>Our Affiliates:</h5>
+            <div className="d-inline-flex"><FooterAffiliatesLogo/><h5 className="affiliates-information-footer-header">Our Affiliates:</h5></div>
             <p>- Francesco's Pizza</p>
             <p>- Dominick's Pizza</p>
             <p>- Pizza Ranch</p>
