@@ -13,7 +13,7 @@ export default function Carts({ deleteCartItem }) {
   if (error) return <h3>Something Went Wrong</h3>
   let totalPrice = 0;
   let price = 0;
-  data.carts.map(cart => {
+  data?.carts.map(cart => {
     price = parseFloat(cart.price);
     if (!isNaN(price)) {
       totalPrice = totalPrice + price;

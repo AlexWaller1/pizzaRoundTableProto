@@ -11,7 +11,7 @@ export default function Beverages() {
   return (
     <>
       {
-        data.beverages.length > 0 ? <div className="row mt-3" id="all-beverages-page">
+        data?.beverages.length > 0 ? <div className="row mt-3" id="all-beverages-page">
             {
                 data.beverages.map(beverage => (
                     <BeverageCard key={beverage.id} beverage={beverage}/>

@@ -14,7 +14,7 @@ export default function Appetizers() {
     <>
       {data.appetizers.length > 0 ? (
         <div className="row mt-3" id="appetizers-page-div">
-           {data.appetizers.map(app => (
+           {data?.appetizers.map(app => (
             <AppetizerCard key={app.id} appetizer={app}/>
            ))}
         </div>

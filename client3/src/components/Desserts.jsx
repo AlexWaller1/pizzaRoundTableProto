@@ -9,7 +9,7 @@ export default function Desserts() {
   if (loading) return <h3>Loading Desserts...</h3>
   if (error) return <h3>Something Went Wrong</h3>
   return (
-    data.desserts.length > 0 ? <div className="row mt-3" id="all-desserts-page">
+    data?.desserts.length > 0 ? <div className="row mt-3" id="all-desserts-page">
         {
             data.desserts.map(dessert => (
                 <DessertCard key={dessert.id} dessert={dessert}/>

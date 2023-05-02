@@ -14,7 +14,7 @@ export default function Pizzas() {
         <>
           {data.pizzas.length > 0 ? (
             <div className="row mt-3" id="all-pizzas-page">
-                {data.pizzas.map((pizza) => (
+                {data?.pizzas.map((pizza) => (
                     <PizzaCard key={pizza.id} pizza={pizza}/>
                 ))}
             </div>

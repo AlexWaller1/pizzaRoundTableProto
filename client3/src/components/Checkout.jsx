@@ -12,7 +12,7 @@ export default function Checkout() {
   let price = 0;
   let totalPrice = 0;
   const { loading, error, data } = useQuery(GET_CARTS);
-  data.carts.map(cart => {
+  data?.carts.map(cart => {
     price = parseFloat(cart.price);
     if (!isNaN(price)) {
       totalPrice = totalPrice + price;
@@ -30,6 +30,7 @@ export default function Checkout() {
   
   if (loading) return <h3>Loading Checkout Page</h3>
   if (error) return <h3>Something Went Wrong</h3>
+  
   return (
     <div className="mt-5" id="checkout-div">
         { thankYou && <OrderThankYouIcon/>}
