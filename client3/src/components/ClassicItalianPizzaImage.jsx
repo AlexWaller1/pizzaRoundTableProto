@@ -5,7 +5,7 @@ export default function ClassicItalianPizzaImage() {
   return (
     <div className="classic-italian-pizza-image-1">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 14400 14400">
+	     width="600px" height="600px" viewBox="0 0 14400 14400">
 
 
         <g id="Layer_5">
