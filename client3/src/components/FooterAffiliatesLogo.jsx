@@ -5,7 +5,7 @@ export default function FooterAffiliatesLogo() {
   return (
     <div className="footer-affiliates-logo-div">
         <svg className="footer-affiliates-svg" fill="#FFFFFF" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-	       width="30px" height="30px" viewBox="0 0 2880 2880">
+	       width="30px" height="25px" viewBox="0 0 2880 2880">
 
 
                 <g id="Layer_3">
