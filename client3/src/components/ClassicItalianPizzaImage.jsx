@@ -1,11 +1,11 @@
 import React from 'react'
 import "./ClassicItalianPizzaImage.css";
 
-export default function ClassicItalianPizzaImage() {
+export default function ClassicItalianPizzaImage({ width, height}) {
   return (
     <div className="classic-italian-pizza-image-1">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
-	     width="600px" height="600px" viewBox="0 0 14400 14400">
+	     width={width} height={height} viewBox="0 0 14400 14400">
 
 
         <g id="Layer_5">

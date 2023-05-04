@@ -10,7 +10,7 @@ export default function PizzaCard({ pizza }) {
           { /* card bootstrap class with a margin-bottom of 3 */}
             <div className="card-body" id="pizza-card-div">
                 <div className="d-flex justify-content-between align-items-center" id="pizza-name-and-btn-div">
-                  <h4 className="pizza-title">{pizza.name}</h4>
+                  <h1 className="pizza-title">{pizza.name}</h1>
                   <a className="btn btn-dark" href={`/pizzas/${pizza.id}`}>
                     <div className="d-flex">
                       <h5 className="view-item-btn-text">View</h5>
@@ -18,7 +18,7 @@ export default function PizzaCard({ pizza }) {
                     </div>
                   </a>
                 </div>
-                {pizza.name === "White Pizza" ? <ClassicItalianPizzaImage/> : <img src={pizza.image} alt="pizza-image" id="pizza-image" />}
+                {pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="600px" height="600px"/> : <img src={pizza.image} alt="pizza-image" id="pizza-image" />}
                 <p className="pizza-price">
                    <h4>{pizza.price}</h4>
                 </p>
