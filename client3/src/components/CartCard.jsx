@@ -1,5 +1,6 @@
 import React from 'react'
-import DeleteFromCartBtn from './DeleteFromCartBtn'
+import DeleteFromCartBtn from './DeleteFromCartBtn';
+import ClassicItalianPizzaImage from './ClassicItalianPizzaImage';
 import "./CartCard.css"
 
 export default function CartCard({ cart }) {
@@ -11,7 +12,7 @@ export default function CartCard({ cart }) {
                 
             </div>
             <div id="cart-card-image-div">
-              <img src={cart.image} alt="cart-image" className="mt-5" id="cart-image"/>
+              {cart.name === "White Pizza" ? <ClassicItalianPizzaImage width="200px" height="200px"/> : <img src={cart.image} alt="cart-image" className="mt-5" id="cart-image"/>}
             </div>
             <div className="d-flex justify-content-between" id="cart-card-price-div">
               <h4 className="mt-5" id="cart-price">{cart.price}</h4>

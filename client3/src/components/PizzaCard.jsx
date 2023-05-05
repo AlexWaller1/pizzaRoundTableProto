@@ -20,7 +20,7 @@ export default function PizzaCard({ pizza }) {
                 </div>
                 {pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="600px" height="600px"/> : <img src={pizza.image} alt="pizza-image" id="pizza-image" />}
                 <p className="pizza-price">
-                   <h4>{pizza.price}</h4>
+                   <h2>{`$${pizza.price}`}</h2>
                 </p>
             </div>
         </div>
