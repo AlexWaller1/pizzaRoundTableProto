@@ -1,6 +1,7 @@
 import "./ItemCard.css"
 import ViewBtnIcon from "./ViewBtnIcon";
 import ClassicItalianPizzaImage from "./ClassicItalianPizzaImage";
+import ClassicItalianPizzaImage2 from "./ClassicItalianPizzaImage2";
 
 export default function PizzaCard({ pizza }) {
   return (
@@ -18,7 +19,7 @@ export default function PizzaCard({ pizza }) {
                     </div>
                   </a>
                 </div>
-                {pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="600px" height="600px"/> : <img src={pizza.image} alt="pizza-image" id="pizza-image" />}
+                {pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="600px" height="600px"/> : pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"700px"} height={"600px"} /> :  <img src={pizza.image} alt="pizza-image" id="pizza-image" />}
                 <p className="pizza-price">
                    <h2>{`$${pizza.price}`}</h2>
                 </p>
