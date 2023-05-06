@@ -5,6 +5,7 @@ import { GET_PIZZA } from '../queries/pizzaQueries';
 import BackBtnArrow from './BackBtnArrow';
 import CartBtnIcon from './CartBtnIcon';
 import ClassicItalianPizzaImage from './ClassicItalianPizzaImage';
+import ClassicItalianPizzaImage2 from './ClassicItalianPizzaImage2';
 import "./ShowPage.css";
 
 export default function PizzaShowPage({ addCartItem }) {
@@ -28,7 +29,7 @@ export default function PizzaShowPage({ addCartItem }) {
                       <h2>{ data.pizza.price }</h2>
                     </div>
                     <div id="pizza-image-div">
-                        {data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="800px" height="800px"/> : <img src={ data.pizza.image } alt="pizza" id="pizza-image" />}
+                        {data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="900px" height="800px"/> : data.pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"900px"} height={"800px"}/> : <img src={ data.pizza.image } alt="pizza" id="pizza-image" />}
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">
