@@ -4,6 +4,8 @@ import { useQuery } from "@apollo/client";
 import { GET_BEVERAGE } from '../queries/beverageQueries';
 import BackBtnArrow from './BackBtnArrow';
 import CartBtnIcon from './CartBtnIcon';
+import PickerelColaLogo from './PickerelColaLogo';
+import DietPickerelColaLogo from './DietPickerelColaLogo';
 import "./ShowPage.css";
 
 export default function BeverageShowPage({ addCartItem }) {
@@ -27,7 +29,7 @@ export default function BeverageShowPage({ addCartItem }) {
                         <h2>{ data.beverage.price }</h2>
                     </div>
                     <div id="beverage-show-page-image-div">
-                        <img src={ data.beverage.image } alt="beverage image" id="beverage-image" />
+                        { data.beverage.name === "Pickerel Cola" ? <PickerelColaLogo height={400} width={400}/> : data.beverage.name === "Diet Pickerel Cola" ? <DietPickerelColaLogo height={400} width={400}/> : ""}
                     </div>
                 </div>
                 <div className="d-flex" id="beverage-show-page-btns-div">

@@ -5,7 +5,7 @@ export default function DietPickerelColaLogo({ height, width }) {
   return (
     <div className="Diet-Pickerel-Cola-Logo-Div">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1872 1872" >
+	 viewBox="0 0 1872 1872" height={height} width={width} >
 
 <g id="Layer_1">
 </g>

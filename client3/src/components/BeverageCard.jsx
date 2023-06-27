@@ -1,6 +1,7 @@
 import "./ItemCard.css"
 import ViewBtnIcon from "./ViewBtnIcon"
 import PickerelColaLogo from "./PickerelColaLogo";
+import DietPickerelColaLogo from "./DietPickerelColaLogo";
 
 export default function BeverageCard({ beverage }) {
   return (
@@ -17,7 +18,7 @@ export default function BeverageCard({ beverage }) {
                     </a>
                 </div>
                 <div id="beverage-card-image-div">
-                  {beverage.name === "Pickerel Cola" ? <PickerelColaLogo height={400} width={400} /> : ""}
+                  {beverage.name === "Pickerel Cola" ? <PickerelColaLogo height={400} width={400} /> : beverage.name === "Diet Pickerel Cola" ? <DietPickerelColaLogo height={400} width={400} /> : ""}
                 </div>
                 <h4 className="beverage-price">{beverage.price}</h4>
             </div>
