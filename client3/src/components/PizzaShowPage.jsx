@@ -6,6 +6,9 @@ import BackBtnArrow from './BackBtnArrow';
 import CartBtnIcon from './CartBtnIcon';
 import ClassicItalianPizzaImage from './ClassicItalianPizzaImage';
 import ClassicItalianPizzaImage2 from './ClassicItalianPizzaImage2';
+import ClassicItalianPizzaImage3 from './ClassicItalianPizzaImage3';
+import ClassicItalianPizzaImage4 from './ClassicItalianPizzaImage4';
+import ClassicItalianPizzaImage5 from './ClassicItalianPizzaImage5';
 import "./ShowPage.css";
 
 export default function PizzaShowPage({ addCartItem }) {
@@ -19,6 +22,7 @@ export default function PizzaShowPage({ addCartItem }) {
 
   return (
     <>
+    { console.log (data.pizza.name)}
       {
         !loading && !error && (
             <div className='mx-auto w-75 card p-5' id="pizza-show-page-div">
@@ -29,7 +33,7 @@ export default function PizzaShowPage({ addCartItem }) {
                       <h2>{ data.pizza.price }</h2>
                     </div>
                     <div id="pizza-image-div">
-                        {data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage width="900px" height="800px"/> : data.pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"900px"} height={"800px"}/> : <img src={ data.pizza.image } alt="pizza" id="pizza-image" />}
+                        {data.pizza.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="900px" height="800px"/> : data.pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"900px"} height={"800px"}/> : data.pizza.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 width="900px" height="800px"/> : data.pizza.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="900px" height="800px" /> : data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="900px" height="800px" /> : ""}
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">
