@@ -2,6 +2,10 @@ import React from 'react'
 import DeleteFromCartBtn from './DeleteFromCartBtn';
 import ClassicItalianPizzaImage from './ClassicItalianPizzaImage';
 import ClassicItalianPizzaImage2 from './ClassicItalianPizzaImage2';
+import ClassicItalianPizzaImage3 from './ClassicItalianPizzaImage3';
+import ClassicItalianPizzaImage4 from './ClassicItalianPizzaImage4';
+import ClassicItalianPizzaImage5 from './ClassicItalianPizzaImage5';
+import ClassicItalianPizzaImage6 from './ClassicItalianPizzaImage6';
 import "./CartCard.css"
 
 export default function CartCard({ cart }) {
@@ -13,7 +17,7 @@ export default function CartCard({ cart }) {
                 
             </div>
             <div id="cart-card-image-div">
-              { cart.name === "White Pizza" ? <ClassicItalianPizzaImage width="200px" height="200px"/> : cart.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width="200px" height="200px" /> : <img src={cart.image} alt="cart-image" className="mt-5" id="cart-image"/> }
+              { cart.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="200px" height="200px"/> : cart.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width="200px" height="200px" /> : cart.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 height="200px" width="200px" /> : cart.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="200px" height="200px" /> : cart.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="200px" height="200px" /> : cart.name === "Meat Lovers Pizza" ? <ClassicItalianPizzaImage6 width="200px" height="200px"/> : ""}
             </div>
             <div className="d-flex justify-content-between" id="cart-card-price-div">
               <h4 className="mt-5" id="cart-price">{cart.price}</h4>

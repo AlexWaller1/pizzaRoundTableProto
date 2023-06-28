@@ -1,5 +1,7 @@
 import "./ItemCard.css";
 import ViewBtnIcon from "./ViewBtnIcon";
+import AppetizerImage1 from "./AppetizerImage1";
+import AppetizerImage2 from "./AppetizerImage2";
 
 export default function AppetizerCard({ appetizer }) {
   return (
@@ -16,7 +18,7 @@ export default function AppetizerCard({ appetizer }) {
                   </a>
                </div>
                <div id="appetizer-image-div">
-                 <img src={appetizer.image} alt="appetizer image" className="appetizer-image"/>
+                 { appetizer.name === "Grilled Calamari" ? <AppetizerImage1 height="400px" width="700px" /> : appetizer.name === "Bruschetta" ? <AppetizerImage2 height="400px" width="800px" /> : ""}
                </div>
                <h4 className="appetizer-price">{appetizer.price}</h4>
             </div>
