@@ -20,7 +20,7 @@ export default function BeverageCard({ beverage }) {
                 <div id="beverage-card-image-div">
                   {beverage.name === "Pickerel Cola" ? <PickerelColaLogo height={400} width={400} /> : beverage.name === "Diet Pickerel Cola" ? <DietPickerelColaLogo height={400} width={400} /> : ""}
                 </div>
-                <h4 className="beverage-price">{`$${beverage.price}`}</h4>
+                <h2 className="beverage-price">{`$${beverage.price}`}</h2>
             </div>
         </div>
     </div>

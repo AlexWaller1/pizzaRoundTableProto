@@ -20,7 +20,7 @@ export default function DessertCard({ dessert }) {
                     </a>
                 </div>
                 { dessert.name === "Chocolate Mousse Cake" ? <DessertImage1 width="800px" height="400px"/> : dessert.name === "Tiramasu" ? <DessertImage2 width="800px" height="400px"/> : dessert.name === "Cannoli" ? <DessertImage3 width="800px" height="400px"/> : dessert.name === "Raspberry Cheese Cake" ? <DessertImage4 width="800px" height="400px"/> : ""}
-                <h4 className="dessert-price">{`$${dessert.price}`}</h4>
+                <h2 className="dessert-price">{`$${dessert.price}`}</h2>
             </div>
         </div>
     </div>

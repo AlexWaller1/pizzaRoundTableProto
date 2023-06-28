@@ -22,7 +22,7 @@ export default function AppetizerCard({ appetizer }) {
                <div id="appetizer-image-div">
                  { appetizer.name === "Grilled Calamari" ? <AppetizerImage1 height="400px" width="800px" /> : appetizer.name === "Bruschetta" ? <AppetizerImage2 height="400px" width="800px" /> : appetizer.name === "Fried Scallops" ? <AppetizerImage3 height="400px" width="800px" /> : appetizer.name === "Antipasto" ? <AppetizerImage4 height="400px" width="800px" /> : ""}
                </div>
-               <h4 className="appetizer-price">{`$${appetizer.price}`}</h4>
+               <h2 className="appetizer-price">{`$${appetizer.price}`}</h2>
             </div>
         </div>
     </div>
