@@ -34,7 +34,7 @@ export default function PizzaShowPage({ addCartItem }) {
                       <h2>{ `$${data.pizza.price}` }</h2>
                     </div>
                     <div id="pizza-image-div">
-                        {data.pizza.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="900px" height="800px"/> : data.pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"900px"} height={"800px"}/> : data.pizza.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 width="900px" height="800px"/> : data.pizza.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="900px" height="800px" /> : data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="900px" height="800px" /> : data.pizza.name === "Meat Lover's Pizza" ? <ClassicItalianPizzaImage6 width="900px" height="800px" /> : ""}
+                        {data.pizza.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="900px" height="800px"/> : data.pizza.name === "Neapolitan Pizza" ? <ClassicItalianPizzaImage2 width={"900px"} height={"800px"}/> : data.pizza.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 width="900px" height="800px"/> : data.pizza.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="900px" height="800px" /> : data.pizza.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="900px" height="800px" /> : data.pizza.name === "Meat Lover's Pizza" ? <ClassicItalianPizzaImage6 width="900px" height="800px" /> : ""}
                     </div>
                 </div>
                 <div className="d-flex" id="pizza-show-page-btns-div">

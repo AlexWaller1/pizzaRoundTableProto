@@ -23,7 +23,7 @@ export default function PizzaCard({ pizza }) {
                     </div>
                   </a>
                 </div>
-                {pizza.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="700px" height="600px"/> : pizza.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width={"700px"} height={"600px"} /> :  pizza.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 width={"700px"} height={"600px"} /> : pizza.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width={"700px"} height={"600px"}/> : pizza.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="700px" height="600px" /> : pizza.name === "Meat Lover's Pizza" ? <ClassicItalianPizzaImage6 width="700px" height="600px" /> : ""}
+                {pizza.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="700px" height="600px"/> : pizza.name === "Neapolitan Pizza" ? <ClassicItalianPizzaImage2 width={"700px"} height={"600px"} /> :  pizza.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 width={"700px"} height={"600px"} /> : pizza.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width={"700px"} height={"600px"}/> : pizza.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="700px" height="600px" /> : pizza.name === "Meat Lover's Pizza" ? <ClassicItalianPizzaImage6 width="700px" height="600px" /> : ""}
                 <p className="pizza-price">
                    <h2>{`$${pizza.price}`}</h2>
                 </p>
