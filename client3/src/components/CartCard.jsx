@@ -10,6 +10,12 @@ import AppetizerImage1 from './AppetizerImage1';
 import AppetizerImage2 from './AppetizerImage2';
 import AppetizerImage3 from './AppetizerImage3';
 import AppetizerImage4 from './AppetizerImage4';
+import DessertImage1 from './DessertImage1';
+import DessertImage2 from './DessertImage2';
+import DessertImage3 from './DessertImage3';
+import DessertImage4 from './DessertImage4';
+import PickerelColaLogo from './PickerelColaLogo';
+import DietPickerelColaLogo from './DietPickerelColaLogo';
 import "./CartCard.css"
 
 export default function CartCard({ cart }) {
@@ -21,10 +27,10 @@ export default function CartCard({ cart }) {
                 
             </div>
             <div id="cart-card-image-div">
-              { cart.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="200px" height="200px"/> : cart.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width="200px" height="200px" /> : cart.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 height="200px" width="200px" /> : cart.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="200px" height="200px" /> : cart.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="200px" height="200px" /> : cart.name === "Meat Lovers Pizza" ? <ClassicItalianPizzaImage6 width="200px" height="200px"/> : cart.name === "Grilled Calamari" ? <AppetizerImage1 height="200px" width="200px"/> : cart.name === "Bruschetta" ? <AppetizerImage2 height="200px" width="200px"/> : cart.name === "Fried Scallops" ? <AppetizerImage3 height="200px" width="200px"/> : cart.name === "Antipasto" ? <AppetizerImage4 height="200px" width="200px" /> : ""}
+              { cart.name === "Stuffed Pizza" ? <ClassicItalianPizzaImage width="200px" height="200px"/> : cart.name === "Lake Cushetunk Special!" ? <ClassicItalianPizzaImage2 width="200px" height="200px" /> : cart.name === "Eggplant Parmesean Pizza" ? <ClassicItalianPizzaImage3 height="200px" width="200px" /> : cart.name === "Sicilian Pizza" ? <ClassicItalianPizzaImage4 width="200px" height="200px" /> : cart.name === "White Pizza" ? <ClassicItalianPizzaImage5 width="200px" height="200px" /> : cart.name === "Meat Lovers Pizza" ? <ClassicItalianPizzaImage6 width="200px" height="200px"/> : cart.name === "Grilled Calamari" ? <AppetizerImage1 height="200px" width="200px"/> : cart.name === "Bruschetta" ? <AppetizerImage2 height="200px" width="200px"/> : cart.name === "Fried Scallops" ? <AppetizerImage3 height="200px" width="200px"/> : cart.name === "Antipasto" ? <AppetizerImage4 height="200px" width="200px" /> : cart.name === "Chocolate Mousse Cake" ? <DessertImage1 width="200px" height="200px"/> : cart.name === "Tiramasu" ? <DessertImage2 width="200px" height="200px"/> : cart.name === "Cannoli" ? <DessertImage3 width="200px" height="200px"/> : cart.name === "Raspberry Cheese Cake" ? <DessertImage4 width="200px" height="200px"/> : cart.name === "Pickerel Cola" ? <PickerelColaLogo width="200px" height="200px"/> : cart.name === "Diet Pickerel Cola" ? <DietPickerelColaLogo width="200px" height="200px"/> : ""}
             </div>
             <div className="d-flex justify-content-between" id="cart-card-price-div">
-              <h4 className="mt-5" id="cart-price">{cart.price}</h4>
+              <h4 className="mt-5" id="cart-price">{`$${cart.price}`}</h4>
               <DeleteFromCartBtn cartId={cart.id} />
             </div>
             

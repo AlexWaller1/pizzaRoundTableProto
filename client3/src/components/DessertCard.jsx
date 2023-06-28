@@ -11,7 +11,7 @@ export default function DessertCard({ dessert }) {
         <div className="card mb-3">
             <div className="card-body" id="dessert-card-div">
                 <div className="d-flex justify-content-between align-content-center" id="dessert-name-and-btn-div">
-                    <h4 className="dessert-title">{dessert.name}</h4>
+                    <h1 className="dessert-title">{dessert.name}</h1>
                     <a className="btn btn-dark" href={`/desserts/${dessert.id}`}>
                       <div className="d-flex">
                         <h5 className="view-item-btn-text">View</h5>

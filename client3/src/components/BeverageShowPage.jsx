@@ -26,7 +26,7 @@ export default function BeverageShowPage({ addCartItem }) {
                     <div id="beverage-show-page-additional-info-div">
                         <h1>{ data.beverage.name }</h1>
                         <h3>{ data.beverage.description }</h3>
-                        <h2>{ data.beverage.price }</h2>
+                        <h2>{ `$${data.beverage.price}` }</h2>
                     </div>
                     <div id="beverage-show-page-image-div">
                         { data.beverage.name === "Pickerel Cola" ? <PickerelColaLogo height={400} width={400}/> : data.beverage.name === "Diet Pickerel Cola" ? <DietPickerelColaLogo height={400} width={400}/> : ""}
