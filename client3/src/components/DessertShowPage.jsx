@@ -4,6 +4,10 @@ import { useQuery } from "@apollo/client";
 import { GET_DESSERT } from '../queries/dessertQueries';
 import BackBtnArrow from './BackBtnArrow';
 import CartBtnIcon from './CartBtnIcon';
+import DessertImage1 from './DessertImage1';
+import DessertImage2 from './DessertImage2';
+import DessertImage3 from './DessertImage3';
+import DessertImage4 from './DessertImage4';
 import "./ShowPage.css";
 
 export default function DessertShowPage({ addCartItem }) {
@@ -25,10 +29,10 @@ export default function DessertShowPage({ addCartItem }) {
                     <div id="dessert-additional-info-div">
                         <h1>{ data.dessert.name }</h1>
                         <h3>{ data.dessert.description }</h3>
-                        <h2>{ data.dessert.price }</h2>
+                        <h2>{ `$${data.dessert.price}` }</h2>
                     </div>
                     <div id="dessert-image-div">
-                        <img src='234yrngje35r3r43445' alt="dessert image" id="dessert-image" />
+                        { data.dessert.name === "Chocolate Mousse Cake" ? <DessertImage1 width="800px" height="400px"/> : data.dessert.name === "Tiramasu" ? <DessertImage2 width="800px" height="400px"/> : data.dessert.name === "Cannoli" ? <DessertImage3 width="800px" height="400px"/> : data.dessert.name === "Raspberry Cheese Cake" ? <DessertImage4 width="800px" height="400px"/> : ""}
                     </div>
                 </div>
                 <div className="d-flex" id="dessert-show-page-btns-div">

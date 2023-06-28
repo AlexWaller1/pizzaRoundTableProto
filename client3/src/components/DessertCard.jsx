@@ -1,5 +1,9 @@
 import "./ItemCard.css"
 import ViewBtnIcon from "./ViewBtnIcon"
+import DessertImage1 from "./DessertImage1";
+import DessertImage2 from "./DessertImage2";
+import DessertImage3 from "./DessertImage3";
+import DessertImage4 from "./DessertImage4";
 
 export default function DessertCard({ dessert }) {
   return (
@@ -15,8 +19,8 @@ export default function DessertCard({ dessert }) {
                       </div>
                     </a>
                 </div>
-                <img src={dessert.image} alt="dessert image" id="dessert-image"/>
-                <h4 className="dessert-price">{dessert.price}</h4>
+                { dessert.name === "Chocolate Mousse Cake" ? <DessertImage1 width="800px" height="400px"/> : dessert.name === "Tiramasu" ? <DessertImage2 width="800px" height="400px"/> : dessert.name === "Cannoli" ? <DessertImage3 width="800px" height="400px"/> : dessert.name === "Raspberry Cheese Cake" ? <DessertImage4 width="800px" height="400px"/> : ""}
+                <h4 className="dessert-price">{`$${dessert.price}`}</h4>
             </div>
         </div>
     </div>
