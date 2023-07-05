@@ -63,7 +63,7 @@ export default function EditReviewModal({ review }) {
                             <label className="form-label"><h5>Review Text:</h5></label>
                             <textarea className="form-control" id="text" value={text} onChange={ (e) => setText(e.target.value)}></textarea>
                         </div>
-                        <button type="submit" className="btn btn-dark" id="edit-review-submit-btn"><h5>{"Submit >>"}</h5></button>
+                        <button type="submit" className="btn btn-dark" id="edit-review-submit-btn" data-bs-dismiss="modal"><h5>{"Submit >>"}</h5></button>
                     </form>
                 </div> 
             </div>
