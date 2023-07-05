@@ -18,6 +18,13 @@ export default function HomePage() {
         <div id="home-page-nested-div-1">
           <h1 id="home-page-header-1">The Best Pizza in New Jersey!</h1>
           <HomePageImage1 height="800px" width="1600px"/>
+          <h3 className="">
+            The tradition and evolution of Pizza are genuinely exciting, bringing 
+            together timeless recipes with cutting edge innovation. We are proud to 
+            provide Pizzas using untouched recipes from the old days in Italy, while also
+            providing pizzas that honor the tradition of Pizza Shops around the world
+            that contribute their unique creativity <br/> to move Pizza forward.
+          </h3>
         </div>
         <div id="slice-1">
           <PizzaSlice1 height="200px" width="200px"/>
@@ -25,7 +32,8 @@ export default function HomePage() {
         <div id="home-page-nested-div-2">
           <h1 id="home-page-header-div-2">All Dough and Sauce Made In House!</h1>
           <HomePageImage2 height="800px" width="1600px"/>
-          <h3>We believe having an exceptional crust is the key to any great pizza.
+          <h3 className="crust-ingredients-text">
+            We believe having an exceptional crust is the key to any great pizza.
             All pizza dough is made fresh in house because we never want a customer
             getting anything less than the best. The same goes for our sauce. No premade
             cans or bags for us. We crush our own tomatoes and add all fresh ingredients
@@ -37,7 +45,14 @@ export default function HomePage() {
         </div>
         <div id="home-page-nested-div-2">
           <h1>All Meats and Cheeses are fresh from our affiliate K & S Italian Specialties</h1>
-              <HomePageImage3 height="800px" width="1600px" />
+          <HomePageImage3 height="800px" width="1600px" />
+          <h3>
+              We understand the importance of premium ingredients and we know
+              that local businesses are the best places to find quality and
+              consistency. We have partnered with what we believe to be the best
+              Italian deli around to provide us with the highest standard of
+              Italian meats and cheeses.
+          </h3>
         </div>
         <div id="slice-3">
           <PizzaSlice3 height="200px" width="200px"/>
