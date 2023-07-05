@@ -1,9 +1,20 @@
 #home-page-div {
+    padding: 25px;
+    .card-body {
+        font-family: "arial-black";
+    }
+    
+    .card {
+        background-color: rgb(129, 41, 41);
+        --bs-border-radius: 0.175rem !important;
+        --bs-border-width: 5px !important;
+    }
     #slice-1 {
         text-align: center;
     }
     #slice-2 {
         text-align: center;
+        padding-bottom: 20px;
     }
     #slice-3 {
         text-align: center;
