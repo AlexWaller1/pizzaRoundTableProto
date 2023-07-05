@@ -6,3 +6,7 @@
 .container, .containter-sm {
     max-width: 10000px;
 }
+
+.btn.btn-dark {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
