@@ -1,5 +1,5 @@
 import React from 'react';
-import "./PizzaSlice1";
+import "./PizzaSlice1.css";
 
 export default function PizzaSlice1({ height, width }) {
   return (

@@ -2,29 +2,46 @@ import React from 'react'
 import HomePageImage1 from './HomePageImage1';
 import HomePageImage2 from './HomePageImage2';
 import HomePageImage3 from './HomePageImage3';
+import PizzaSlice1 from './PizzaSlice1';
+import PizzaSlice2 from './PizzaSlice2';
+import PizzaSlice3 from './PizzaSlice3';
+import PizzaSlice4 from './PizzaSlice4';
 import "./HomePage.css";
 
 export default function HomePage() {
   return (
     <>
       <div id="home-page-div">
+        <div id="slice-2">
+          <PizzaSlice2 height="200px" width="200px"/>
+        </div>
         <div id="home-page-nested-div-1">
           <h1 id="home-page-header-1">The Best Pizza in New Jersey!</h1>
           <HomePageImage1 height="800px" width="1600px"/>
         </div>
+        <div id="slice-1">
+          <PizzaSlice1 height="200px" width="200px"/>
+        </div>
         <div id="home-page-nested-div-2">
           <h1 id="home-page-header-div-2">All Dough and Sauce Made In House!</h1>
           <HomePageImage2 height="800px" width="1600px"/>
+          <h3>We believe having an exceptional crust is the key to any great pizza.
+            All pizza dough is made fresh in house because we never want a customer
+            getting anything less than the best. The same goes for our sauce. No premade
+            cans or bags for us. We crush our own tomatoes and add all fresh ingredients
+            ourselves.
+          </h3>
+        </div>
+        <div id="slice-4">
+          <PizzaSlice4 height="200px" width="200px"/>
         </div>
         <div id="home-page-nested-div-2">
-          <h6 id="home-page-text">Pizza Roundtable offers Italian Pizza unique to Whitehouse Station of New Jersey.
-              Offering excellent, homemade crust with the fineset cheeses, meats, and sauces, we
-              offer the Italian classics and go to great lengths to ensure our customers get the 
-              best and freshest ingredients.
+          <h1>All Meats and Cheeses are fresh from our affiliate K & S Italian Specialties</h1>
               <HomePageImage3 height="800px" width="1600px" />
-          </h6>
         </div>
-       
+        <div id="slice-3">
+          <PizzaSlice3 height="200px" width="200px"/>
+        </div>
       </div>
     </>
   )
