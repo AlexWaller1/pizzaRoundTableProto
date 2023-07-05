@@ -44,7 +44,7 @@ export default function EditReviewModal({ review }) {
                 </div>
                 <div classname="modal-body" id="modal-body">
                     <form onSubmit={ onSubmit }>
-                        <div className="mb-3" id="review-title">
+                        <div className="mb-3 mt-3" id="review-title">
                             <label className="form-label"><h5>Title:</h5></label>
                             <input type="text" className="form-control" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
                         </div>

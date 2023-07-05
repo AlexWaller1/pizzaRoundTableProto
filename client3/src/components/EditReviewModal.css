@@ -10,6 +10,9 @@
 
 #modal-body {
     background-color: rgb(37, 36, 36);
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
 }
 
 .btn-close {
