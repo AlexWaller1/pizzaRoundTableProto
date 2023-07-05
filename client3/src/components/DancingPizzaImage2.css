@@ -1,0 +1,23 @@
+.dancing-pizza-image-2 {
+    padding-top: 125px;
+    .st0{
+        fill:#EF3A27;
+        stroke:#000000;
+        stroke-miterlimit:10;
+    }
+	.st1{
+        fill:#E5D6B7;
+    }
+	.st2{
+        fill:#EAD657;
+    }
+	.st3{
+        fill:#F8F7F7;
+    }
+	.st4{
+        fill:#D0AD61;
+    }
+	.st5{
+        fill:#B12524;
+    }
+}

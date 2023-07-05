@@ -3,6 +3,7 @@ import "./PizzaRoundTableLogo2.css";
 
 export default function PizzaRoundtableLogo() {
   return (
+    <div className="pizza-roundtable-logo">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
 	 width="600px" height="400px" viewBox="0 0 6480 4320">
 
@@ -65,6 +66,6 @@ export default function PizzaRoundtableLogo() {
             <text transform="matrix(0.6625 0 0 1 169.3043 4198.3442)" className="st9 st7 st10" fill="#fff">ROUNDTABLE</text>
         </g>
     </svg>
-
+    </div>
   )
 }
